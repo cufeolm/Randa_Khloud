@@ -1,0 +1,6 @@
+`include "GUVM_sequence.sv"
+`include "child_sequence.sv"
+`include"add_seq.sv"
+`include"bie_seq.sv"
+`include"load_seq.sv"
+`include"GUVM_main_sequence.sv"
