@@ -268,7 +268,7 @@ constant iu_fpu : iu_config_type := (
   nwindows => 8, multiplier => m16x16, divider => radix2, mac => false,
   fpuen => 1, cpen => false, fastjump => false, icchold => false, lddelay => 1, 
   fastdecode => false, watchpoints => 0, impl => 0, version => 0);
-constant iu_fpga : iu_config_type := (-----------------------------------------------------
+constant iu_fpga : iu_config_type := (
   nwindows => 8, multiplier => m32x32, divider => radix2, mac => false,
   fpuen => 0, cpen => false, fastjump => true, icchold => true, lddelay => 1, 
   fastdecode => true, watchpoints => 0, impl => 0, version => 0);
