@@ -1,6 +1,6 @@
 # do leon/run_leon.do
 # QuestaSim-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 23:47:37 on May 12,2020
+# Start time: 01:53:45 on May 13,2020
 # vcom -f leon/DUT_LEON.f 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -470,10 +470,10 @@
 # -- Compiling architecture rtl of proc
 # -- Compiling entity lconf
 # -- Compiling architecture rtl of lconf
-# End time: 23:47:45 on May 12,2020, Elapsed time: 0:00:08
+# End time: 01:53:56 on May 13,2020, Elapsed time: 0:00:11
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 23:47:45 on May 12,2020
+# Start time: 01:53:56 on May 13,2020
 # vlog "+incdir+leon+GUVM" leon/target_pkg.sv 
 # -- Compiling package target_package
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -488,10 +488,10 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 23:47:46 on May 12,2020, Elapsed time: 0:00:01
+# End time: 01:53:57 on May 13,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 3
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 23:47:46 on May 12,2020
+# Start time: 01:53:57 on May 13,2020
 # vlog leon/leon_interface.sv 
 # -- Compiling interface GUVM_interface
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -501,10 +501,10 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 23:47:47 on May 12,2020, Elapsed time: 0:00:01
+# End time: 01:53:58 on May 13,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 23:47:47 on May 12,2020
+# Start time: 01:53:58 on May 13,2020
 # vlog leon/top.sv 
 # -- Compiling module top
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -514,10 +514,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 23:47:48 on May 12,2020, Elapsed time: 0:00:01
+# End time: 01:53:58 on May 13,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim top 
-# Start time: 23:47:48 on May 12,2020
+# Start time: 01:53:58 on May 13,2020
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-2121) GUVM/GUVM_scoreboard.sv(514): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
 # ** Warning: (vopt-2121) GUVM/GUVM_scoreboard.sv(516): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
@@ -630,9 +630,9 @@
 # the VHDL standard as the initial values come from the base signal /top/dut/iuol.debug.de.rd(7 downto 0).
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Randa  Hostname: DESKTOP-0MPNF9V  ProcessID: 12932
-#           Attempting to use alternate WLF file "./wlftjr7q4d".
+#           Attempting to use alternate WLF file "./wlft0xe6h1".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftjr7q4d
+#           Using alternate file: ./wlft0xe6h1
 # ----------------------------------------------------------------
 # UVM-1.1d
 # (C) 2007-2013 Mentor Graphics Corporation
@@ -667,21 +667,23 @@
 # driver second load fetch
 # inst is 1100 1000 0000 0000 0010 0000 0000 0000
 # driver instruction fetch
-# inst is 1001 0010 0101 0101 0000 0000 0000 0100
+# inst is 1001 0010 0111 0101 0000 0000 0000 0100
 # rs1 address = 20 and rs2 address = 4 and rd address = 9
 # op1= 2985317987 op2= 1189058957
 # driver swap done
 # driver store fetch
 # inst is 1101 0010 0010 0000 0010 0000 0000 0000
 # madd : 00000000000000000000000000000000
-# result = 4148019079
-# Sb: inst is 1001 0010 0101 0101 0000 0000 0000 0100
+# result = x
+# Sb: inst is 1001 0010 0111 0101 0000 0000 0000 0100
 # Sb: op1=10110001111100000101011001100011 
 # Sb: op2=1000110110111111001100110001101
-# si_a[index].name() is UIM
-# index is 14
-# MULTIPLY_ENTERED
-# UVM_INFO GUVM/GUVM_scoreboard.sv(490) @ 780: uvm_test_top.env_h.sb [UNSIGNED_INTEGER_MULTIPLCATION_PASS] Actual Calculation=4148019079 Expected Calculation=4148019079 
+# si_a[index].name() is UId
+# index is 18
+# unsigned div
+# i1=2985317987,i2=1189058957
+# h1=2,res=x
+# UVM_ERROR GUVM/GUVM_scoreboard.sv(371) @ 780: uvm_test_top.env_h.sb [UNSIGN_DIV_FAIL] Actual Calculation=         x Expected Calculation=         2 
 # Scoreboard started
 # driver has started
 # driver starting fetching
@@ -690,7 +692,7 @@
 # driver second load fetch
 # inst is 1100 0010 0000 0000 0010 0000 0000 0000
 # driver instruction fetch
-# inst is 1000 0000 0101 0011 1100 0000 0000 0001
+# inst is 1000 0000 0111 0011 1100 0000 0000 0001
 # rs1 address = 15 and rs2 address = 1 and rd address = 0
 # op1= 512609597 op2= 1177417612
 # driver swap done
@@ -698,13 +700,15 @@
 # inst is 1100 0000 0010 0000 0010 0000 0000 0000
 # madd : 00000000000000000000000000000000
 # result = 0
-# Sb: inst is 1000 0000 0101 0011 1100 0000 0000 0001
+# Sb: inst is 1000 0000 0111 0011 1100 0000 0000 0001
 # Sb: op1=11110100011011100110100111101 
 # Sb: op2=1000110001011011111011110001100
-# si_a[index].name() is UIM
-# index is 14
-# MULTIPLY_ENTERED
-# UVM_ERROR GUVM/GUVM_scoreboard.sv(494) @ 3560: uvm_test_top.env_h.sb [UNSIGNED_INTEGER_MULTIPLCATION_FAIL] Actual Calculation=         0 Expected Calculation=1212880988 
+# si_a[index].name() is UId
+# index is 18
+# unsigned div
+# i1=512609597,i2=1177417612
+# h1=0,res=0
+# UVM_INFO GUVM/GUVM_scoreboard.sv(367) @ 3560: uvm_test_top.env_h.sb [UNSIGN_DIV_PASS] Actual Calculation=         0 Expected Calculation=         0 
 # Scoreboard started
 # driver has started
 # driver starting fetching
@@ -713,21 +717,23 @@
 # driver second load fetch
 # inst is 1100 1010 0000 0000 0010 0000 0000 0000
 # driver instruction fetch
-# inst is 1010 0010 0101 0111 1000 0000 0000 0101
+# inst is 1010 0010 0111 0111 1000 0000 0000 0101
 # rs1 address = 30 and rs2 address = 5 and rd address = 17
 # op1= 3151131255 op2= 1206705039
 # driver swap done
 # driver store fetch
 # inst is 1110 0010 0010 0000 0010 0000 0000 0000
 # madd : 00000000000000000000000000000000
-# result = 2033040761
-# Sb: inst is 1010 0010 0101 0111 1000 0000 0000 0101
+# result = x
+# Sb: inst is 1010 0010 0111 0111 1000 0000 0000 0101
 # Sb: op1=10111011110100100111001001110111 
 # Sb: op2=1000111111011001101101110001111
-# si_a[index].name() is UIM
-# index is 14
-# MULTIPLY_ENTERED
-# UVM_INFO GUVM/GUVM_scoreboard.sv(490) @ 6340: uvm_test_top.env_h.sb [UNSIGNED_INTEGER_MULTIPLCATION_PASS] Actual Calculation=2033040761 Expected Calculation=2033040761 
+# si_a[index].name() is UId
+# index is 18
+# unsigned div
+# i1=3151131255,i2=1206705039
+# h1=2,res=x
+# UVM_ERROR GUVM/GUVM_scoreboard.sv(371) @ 6340: uvm_test_top.env_h.sb [UNSIGN_DIV_FAIL] Actual Calculation=         x Expected Calculation=         2 
 # Scoreboard started
 # driver has started
 # driver starting fetching
@@ -736,21 +742,23 @@
 # driver second load fetch
 # inst is 1101 0000 0000 0000 0010 0000 0000 0000
 # driver instruction fetch
-# inst is 1011 0100 0101 0000 0100 0000 0000 1000
+# inst is 1011 0100 0111 0000 0100 0000 0000 1000
 # rs1 address = 1 and rs2 address = 8 and rd address = 26
 # op1= 3733858493 op2= 2997298789
 # driver swap done
 # driver store fetch
 # inst is 1111 0100 0010 0000 0010 0000 0000 0000
 # madd : 00000000000000000000000000000000
-# result = 3849134225
-# Sb: inst is 1011 0100 0101 0000 0100 0000 0000 1000
+# result = x
+# Sb: inst is 1011 0100 0111 0000 0100 0000 0000 1000
 # Sb: op1=11011110100011100010100010111101 
 # Sb: op2=10110010101001110010011001100101
-# si_a[index].name() is UIM
-# index is 14
-# MULTIPLY_ENTERED
-# UVM_INFO GUVM/GUVM_scoreboard.sv(490) @ 9120: uvm_test_top.env_h.sb [UNSIGNED_INTEGER_MULTIPLCATION_PASS] Actual Calculation=3849134225 Expected Calculation=3849134225 
+# si_a[index].name() is UId
+# index is 18
+# unsigned div
+# i1=3733858493,i2=2997298789
+# h1=1,res=x
+# UVM_ERROR GUVM/GUVM_scoreboard.sv(371) @ 9120: uvm_test_top.env_h.sb [UNSIGN_DIV_FAIL] Actual Calculation=         x Expected Calculation=         1 
 # Scoreboard started
 # driver has started
 # driver starting fetching
@@ -759,7 +767,7 @@
 # driver second load fetch
 # inst is 1100 0000 0000 0000 0010 0000 0000 0000
 # driver instruction fetch
-# inst is 1000 0000 0101 0011 0000 0000 0000 0000
+# inst is 1000 0000 0111 0011 0000 0000 0000 0000
 # rs1 address = 12 and rs2 address = 0 and rd address = 0
 # op1= 3469528221 op2= 2307110931
 # driver swap done
@@ -767,13 +775,15 @@
 # inst is 1100 0000 0010 0000 0010 0000 0000 0000
 # madd : 00000000000000000000000000000000
 # result = 0
-# Sb: inst is 1000 0000 0101 0011 0000 0000 0000 0000
+# Sb: inst is 1000 0000 0111 0011 0000 0000 0000 0000
 # Sb: op1=11001110110011001100110010011101 
 # Sb: op2=10001001100000111011100000010011
-# si_a[index].name() is UIM
-# index is 14
-# MULTIPLY_ENTERED
-# UVM_ERROR GUVM/GUVM_scoreboard.sv(494) @ 11900: uvm_test_top.env_h.sb [UNSIGNED_INTEGER_MULTIPLCATION_FAIL] Actual Calculation=         0 Expected Calculation=1167787943 
+# si_a[index].name() is UId
+# index is 18
+# unsigned div
+# i1=3469528221,i2=2307110931
+# h1=1,res=0
+# UVM_ERROR GUVM/GUVM_scoreboard.sv(371) @ 11900: uvm_test_top.env_h.sb [UNSIGN_DIV_FAIL] Actual Calculation=         0 Expected Calculation=         1 
 # Scoreboard started
 # driver has started
 # driver starting fetching
@@ -782,21 +792,23 @@
 # driver second load fetch
 # inst is 1101 0110 0000 0000 0010 0000 0000 0000
 # driver instruction fetch
-# inst is 1011 0100 0101 0111 1100 0000 0000 1011
+# inst is 1011 0100 0111 0111 1100 0000 0000 1011
 # rs1 address = 31 and rs2 address = 11 and rd address = 26
 # op1= 3612753582 op2= 3888476879
 # driver swap done
 # driver store fetch
 # inst is 1111 0100 0010 0000 0010 0000 0000 0000
 # madd : 00000000000000000000000000000000
-# result = 3297520306
-# Sb: inst is 1011 0100 0101 0111 1100 0000 0000 1011
+# result = x
+# Sb: inst is 1011 0100 0111 0111 1100 0000 0000 1011
 # Sb: op1=11010111010101100011111010101110 
 # Sb: op2=11100111110001010111001011001111
-# si_a[index].name() is UIM
-# index is 14
-# MULTIPLY_ENTERED
-# UVM_INFO GUVM/GUVM_scoreboard.sv(490) @ 14680: uvm_test_top.env_h.sb [UNSIGNED_INTEGER_MULTIPLCATION_PASS] Actual Calculation=3297520306 Expected Calculation=3297520306 
+# si_a[index].name() is UId
+# index is 18
+# unsigned div
+# i1=3612753582,i2=3888476879
+# h1=0,res=x
+# UVM_ERROR GUVM/GUVM_scoreboard.sv(371) @ 14680: uvm_test_top.env_h.sb [UNSIGN_DIV_FAIL] Actual Calculation=         x Expected Calculation=         0 
 # Scoreboard started
 # driver has started
 # driver starting fetching
@@ -805,21 +817,23 @@
 # driver second load fetch
 # inst is 1101 0100 0000 0000 0010 0000 0000 0000
 # driver instruction fetch
-# inst is 1010 0100 0101 0011 0000 0000 0000 1010
+# inst is 1010 0100 0111 0011 0000 0000 0000 1010
 # rs1 address = 12 and rs2 address = 10 and rd address = 18
 # op1= 1160667530 op2= 3964351704
 # driver swap done
 # driver store fetch
 # inst is 1110 0100 0010 0000 0010 0000 0000 0000
 # madd : 00000000000000000000000000000000
-# result = 2522895472
-# Sb: inst is 1010 0100 0101 0011 0000 0000 0000 1010
+# result = x
+# Sb: inst is 1010 0100 0111 0011 0000 0000 0000 1010
 # Sb: op1=1000101001011100110000110001010 
 # Sb: op2=11101100010010110011010011011000
-# si_a[index].name() is UIM
-# index is 14
-# MULTIPLY_ENTERED
-# UVM_INFO GUVM/GUVM_scoreboard.sv(490) @ 17460: uvm_test_top.env_h.sb [UNSIGNED_INTEGER_MULTIPLCATION_PASS] Actual Calculation=2522895472 Expected Calculation=2522895472 
+# si_a[index].name() is UId
+# index is 18
+# unsigned div
+# i1=1160667530,i2=3964351704
+# h1=0,res=x
+# UVM_ERROR GUVM/GUVM_scoreboard.sv(371) @ 17460: uvm_test_top.env_h.sb [UNSIGN_DIV_FAIL] Actual Calculation=         x Expected Calculation=         0 
 # Scoreboard started
 # driver has started
 # driver starting fetching
@@ -828,21 +842,23 @@
 # driver second load fetch
 # inst is 1101 0110 0000 0000 0010 0000 0000 0000
 # driver instruction fetch
-# inst is 1011 0100 0101 0101 0000 0000 0000 1011
+# inst is 1011 0100 0111 0101 0000 0000 0000 1011
 # rs1 address = 20 and rs2 address = 11 and rd address = 26
 # op1= 1460999086 op2= 353361194
 # driver swap done
 # driver store fetch
 # inst is 1111 0100 0010 0000 0010 0000 0000 0000
 # madd : 00000000000000000000000000000000
-# result = 3903090828
-# Sb: inst is 1011 0100 0101 0101 0000 0000 0000 1011
+# result = x
+# Sb: inst is 1011 0100 0111 0101 0000 0000 0000 1011
 # Sb: op1=1010111000101010001001110101110 
 # Sb: op2=10101000011111101110100101010
-# si_a[index].name() is UIM
-# index is 14
-# MULTIPLY_ENTERED
-# UVM_INFO GUVM/GUVM_scoreboard.sv(490) @ 20240: uvm_test_top.env_h.sb [UNSIGNED_INTEGER_MULTIPLCATION_PASS] Actual Calculation=3903090828 Expected Calculation=3903090828 
+# si_a[index].name() is UId
+# index is 18
+# unsigned div
+# i1=1460999086,i2=353361194
+# h1=4,res=x
+# UVM_ERROR GUVM/GUVM_scoreboard.sv(371) @ 20240: uvm_test_top.env_h.sb [UNSIGN_DIV_FAIL] Actual Calculation=         x Expected Calculation=         4 
 # Scoreboard started
 # driver has started
 # driver starting fetching
@@ -851,21 +867,23 @@
 # driver second load fetch
 # inst is 1100 1010 0000 0000 0010 0000 0000 0000
 # driver instruction fetch
-# inst is 1000 0010 0101 0010 0100 0000 0000 0101
+# inst is 1000 0010 0111 0010 0100 0000 0000 0101
 # rs1 address = 9 and rs2 address = 5 and rd address = 1
 # op1= 486945594 op2= 178932501
 # driver swap done
 # driver store fetch
 # inst is 1100 0010 0010 0000 0010 0000 0000 0000
 # madd : 00000000000000000000000000000000
-# result = 2064134594
-# Sb: inst is 1000 0010 0101 0010 0100 0000 0000 0101
+# result = 3733858493
+# Sb: inst is 1000 0010 0111 0010 0100 0000 0000 0101
 # Sb: op1=11101000001100011001100111010 
 # Sb: op2=1010101010100100101100010101
-# si_a[index].name() is UIM
-# index is 14
-# MULTIPLY_ENTERED
-# UVM_INFO GUVM/GUVM_scoreboard.sv(490) @ 23020: uvm_test_top.env_h.sb [UNSIGNED_INTEGER_MULTIPLCATION_PASS] Actual Calculation=2064134594 Expected Calculation=2064134594 
+# si_a[index].name() is UId
+# index is 18
+# unsigned div
+# i1=486945594,i2=178932501
+# h1=2,res=de8e28bd
+# UVM_ERROR GUVM/GUVM_scoreboard.sv(371) @ 23020: uvm_test_top.env_h.sb [UNSIGN_DIV_FAIL] Actual Calculation=3733858493 Expected Calculation=         2 
 # Scoreboard started
 # driver has started
 # driver starting fetching
@@ -874,21 +892,23 @@
 # driver second load fetch
 # inst is 1100 0100 0000 0000 0010 0000 0000 0000
 # driver instruction fetch
-# inst is 1011 0000 0101 0011 0000 0000 0000 0010
+# inst is 1011 0000 0111 0011 0000 0000 0000 0010
 # rs1 address = 12 and rs2 address = 2 and rd address = 24
 # op1= 1203347855 op2= 3687669943
 # driver swap done
 # driver store fetch
 # inst is 1111 0000 0010 0000 0010 0000 0000 0000
 # madd : 00000000000000000000000000000000
-# result = 2529893689
-# Sb: inst is 1011 0000 0101 0011 0000 0000 0000 0010
+# result = x
+# Sb: inst is 1011 0000 0111 0011 0000 0000 0000 0010
 # Sb: op1=1000111101110011010000110001111 
 # Sb: op2=11011011110011010110000010110111
-# si_a[index].name() is UIM
-# index is 14
-# MULTIPLY_ENTERED
-# UVM_INFO GUVM/GUVM_scoreboard.sv(490) @ 25800: uvm_test_top.env_h.sb [UNSIGNED_INTEGER_MULTIPLCATION_PASS] Actual Calculation=2529893689 Expected Calculation=2529893689 
+# si_a[index].name() is UId
+# index is 18
+# unsigned div
+# i1=1203347855,i2=3687669943
+# h1=0,res=x
+# UVM_ERROR GUVM/GUVM_scoreboard.sv(371) @ 25800: uvm_test_top.env_h.sb [UNSIGN_DIV_FAIL] Actual Calculation=         x Expected Calculation=         0 
 # Scoreboard started
 # driver has started
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 27800: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
@@ -896,18 +916,18 @@
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   13
+# UVM_INFO :    6
 # UVM_WARNING :    0
-# UVM_ERROR :    2
+# UVM_ERROR :    9
 # UVM_FATAL :    0
 # ** Report counts by id
 # []     1
 # [Questa UVM]     2
 # [RNTST]     1
 # [TEST_DONE]     1
-# [UNSIGNED_INTEGER_MULTIPLCATION_FAIL]     2
-# [UNSIGNED_INTEGER_MULTIPLCATION_PASS]     8
+# [UNSIGN_DIV_FAIL]     9
+# [UNSIGN_DIV_PASS]     1
 # ** Note: $finish    : C:/questasim64_10.6c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 27800 ns  Iteration: 64  Instance: /top
-# End time: 23:47:54 on May 12,2020, Elapsed time: 0:00:06
+# End time: 01:54:07 on May 13,2020, Elapsed time: 0:00:09
 # Errors: 0, Warnings: 24

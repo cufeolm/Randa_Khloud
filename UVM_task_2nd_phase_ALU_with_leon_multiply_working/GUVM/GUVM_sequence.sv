@@ -18,7 +18,7 @@ class GUVM_sequence extends uvm_sequence #(GUVM_sequence_item);
             //opcode x=A ;
            // $display("hello , this is the sequence,%d",command.upper_bit);
            // command.ran_constrained_dep_inst(RY);
-            command.ran_constrained(UIM);
+            command.ran_constrained(UId);
             
             //command.ran();
 
