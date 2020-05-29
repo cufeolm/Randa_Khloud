@@ -1,0 +1,227 @@
+# //  Questa Sim-64
+# //  Version 10.6c win64 Jul 26 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do tb.do
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:28 on May 28,2020
+# vlog -reportprogress 300 a23_alu.v 
+# -- Compiling module a23_alu
+# 
+# Top level modules:
+# 	a23_alu
+# End time: 17:07:28 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:28 on May 28,2020
+# vlog -reportprogress 300 a23_barrel_shift.v 
+# -- Compiling module a23_barrel_shift
+# 
+# Top level modules:
+# 	a23_barrel_shift
+# End time: 17:07:28 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:28 on May 28,2020
+# vlog -reportprogress 300 a23_barrel_shift_fpga.v 
+# -- Compiling module a23_barrel_shift_fpga
+# 
+# Top level modules:
+# 	a23_barrel_shift_fpga
+# End time: 17:07:28 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:29 on May 28,2020
+# vlog -reportprogress 300 a23_config_defines.v 
+# End time: 17:07:29 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:29 on May 28,2020
+# vlog -reportprogress 300 a23_coprocessor.v 
+# -- Compiling module a23_coprocessor
+# 
+# Top level modules:
+# 	a23_coprocessor
+# End time: 17:07:29 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:29 on May 28,2020
+# vlog -reportprogress 300 a23_core.v 
+# -- Compiling module a23_core
+# 
+# Top level modules:
+# 	a23_core
+# End time: 17:07:29 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:29 on May 28,2020
+# vlog -reportprogress 300 a23_decode.v 
+# -- Compiling module a23_decode
+# 
+# Top level modules:
+# 	a23_decode
+# End time: 17:07:30 on May 28,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:30 on May 28,2020
+# vlog -reportprogress 300 a23_execute.v 
+# -- Compiling module a23_execute
+# 
+# Top level modules:
+# 	a23_execute
+# End time: 17:07:31 on May 28,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:31 on May 28,2020
+# vlog -reportprogress 300 a23_fetch.v 
+# -- Compiling module a23_fetch
+# 
+# Top level modules:
+# 	a23_fetch
+# End time: 17:07:31 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:31 on May 28,2020
+# vlog -reportprogress 300 a23_cache.v 
+# -- Compiling module a23_cache
+# 
+# Top level modules:
+# 	a23_cache
+# End time: 17:07:31 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:31 on May 28,2020
+# vlog -reportprogress 300 a23_multiply.v 
+# -- Compiling module a23_multiply
+# 
+# Top level modules:
+# 	a23_multiply
+# End time: 17:07:32 on May 28,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:32 on May 28,2020
+# vlog -reportprogress 300 a23_register_bank.v 
+# -- Compiling module a23_register_bank
+# 
+# Top level modules:
+# 	a23_register_bank
+# End time: 17:07:33 on May 28,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:33 on May 28,2020
+# vlog -reportprogress 300 a23_wishbone.v 
+# -- Compiling module a23_wishbone
+# 
+# Top level modules:
+# 	a23_wishbone
+# End time: 17:07:33 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:33 on May 28,2020
+# vlog -reportprogress 300 boot_mem32.v 
+# -- Compiling module boot_mem32
+# 
+# Top level modules:
+# 	boot_mem32
+# End time: 17:07:33 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:33 on May 28,2020
+# vlog -reportprogress 300 boot_mem128.v 
+# -- Compiling module boot_mem128
+# 
+# Top level modules:
+# 	boot_mem128
+# End time: 17:07:33 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:33 on May 28,2020
+# vlog -reportprogress 300 generic_sram_byte_en.v 
+# -- Compiling module generic_sram_byte_en
+# 
+# Top level modules:
+# 	generic_sram_byte_en
+# End time: 17:07:34 on May 28,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:34 on May 28,2020
+# vlog -reportprogress 300 generic_sram_line_en.v 
+# -- Compiling module generic_sram_line_en
+# 
+# Top level modules:
+# 	generic_sram_line_en
+# End time: 17:07:34 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:34 on May 28,2020
+# vlog -reportprogress 300 GUVM_bfm_amber.sv 
+# -- Compiling interface GUVM_interface
+# 
+# Top level modules:
+# 	--none--
+# End time: 17:07:34 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:07:34 on May 28,2020
+# vlog -reportprogress 300 top.sv 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 17:07:34 on May 28,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt top 
+# Start time: 17:07:34 on May 28,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.top
+# Loading sv_std.std
+# Loading work.top
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.GUVM_interface
+# Loading work.GUVM_interface
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.a23_core
+# Loading work.a23_core
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.a23_fetch
+# Loading work.a23_fetch
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.a23_cache
+# Loading work.a23_cache
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.a23_wishbone
+# Loading work.a23_wishbone
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.a23_decode
+# Loading work.a23_decode
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.a23_execute
+# Loading work.a23_execute
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.a23_barrel_shift
+# Loading work.a23_barrel_shift
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.a23_alu
+# Loading work.a23_alu
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.a23_multiply
+# Loading work.a23_multiply
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.a23_register_bank
+# Loading work.a23_register_bank
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.a23_coprocessor
+# Loading work.a23_coprocessor
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.generic_sram_line_en
+# Loading work.generic_sram_line_en
+# Refreshing C:/Users/Randa/Desktop/GP-files/AMBER23_test/AMBER23_test/work.generic_sram_byte_en
+# Loading work.generic_sram_byte_en
+# ** Warning: (vsim-3764) top.sv(42): Stand-alone call to function 'receive_data' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Instance: /top File: top.sv
+# ** Warning: (vsim-3017) a23_core.v(267): [TFMPC] - Too few port connections. Expected 58, found 57.
+#    Time: 0 ns  Iteration: 0  Instance: /top/dut/u_execute File: a23_execute.v
+# ** Warning: (vsim-3722) a23_core.v(267): [TFMPC] - Missing connection for port 'i_firq_not_user_mode_nxt'.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: kholoud  Hostname: DESKTOP-ESIAOTF  ProcessID: 18552
+#           Attempting to use alternate WLF file "./wlftfasmei".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfasmei
+# output=0
