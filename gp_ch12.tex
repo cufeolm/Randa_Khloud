@@ -1,0 +1,279 @@
+\documentclass[conference,10 pt,twoside]{IEEEtran}
+\IEEEoverridecommandlockouts
+%\documentclass[10pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+%\author{Randa}
+\date{May}
+\usepackage{cite}
+%\usepackage{apacite}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{tikz}
+\pagestyle{empty}
+\usetikzlibrary{shapes,arrows}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{parskip}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\setlength{\parindent}{2em}
+%\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.0}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    
+\begin{document}
+\title{Generic Verification Methodology for Soft Processors Based on UVM}
+\twocolumn
+%\chapter{Chapter I}
+\maketitle
+
+
+\begin{abstract}
+Processor verification has always been a challenging problem for verification engineers. The ever-growing complexity of processor designs increases the verification complexity, and the gap between a verification plan and the available technologies to implement it. This increases the time spent on the implementation, and leads to a questionable quality of the verification process.
+In this paper, we propose UVM,The Universal Verification Methodology is a powerful verification methodology that was architected to be able to verify a wide range of design sizes and design types.Also it's an efficient method for verification due to its re-usability and constrained randomization. The main contribution that this paper introduces is implementing a generic UVM i.e: building one verification environment that can be used to verify any microprocessor with the same specifications and features of the cores that are used in this project to prove the idea. The whole design of the environment is nearly similar to the basic UVM design but with some differences to be suitable for the idea of generic UVM. According to the differences between cores and their supported ISA, interface is changeable with respect to the core under verification, each core has its own package and sequence item. the design has more than one test in order to support all the available instructions with their different nature. More details about design of the test bench and its implementation will be discussed later throughout the paper.
+
+
+Keywords--generic, SoC, soft processor, verification, UVM
+\end{abstract}
+%\chapter{Chapter I}
+%\maketitle{Chapter I}
+Chapter I
+\section{Introduction}
+     The increased complexities of SoCs have led to significant increase in the verification efforts that are imperative to meet the design specifications. It is realized that traditional simulation methods no longer suffice SoC design verification for complete system level verification, such that, the design verification is the process of checking that a given design correctly implements the specification and the required functionality\cite{b1}.
+
+70 percent of the development cycle is dedicated to design verification. Based on that, verification team to Design team ratio ranges from 2:1 to 3:1. As the main goal of verification is to ensure that the design implementation matches the specified specifications. An efficient methodology is needed in order to conquer the challenges resulted by the enormous state space of a processor. The challenge is increased further when the methodology needs to be able to cope with verification of several processor families, especially when they are based on completely different instruction set architectures (ISAs). The Universal Verification Methodology (UVM) is a standardized methodology for verifying SoC designs. UVM is derived mainly from the Open Verification Methodology (OVM) and the Verification Methodology Manual (VMM). 
+SoC can be verified effectively using a simulation test bench that provides data to the chip inputs and checks resulting data on the chip outputs. A modern test bench-based verification environment automatically generates randomized stimulus for the chip inputs under control of user-specified constraints and checks the results of each test automatically. UVM is the best verification methodology that has been created to develop constrained-random test benches in a uniform fashion and to permit limited reuse of test bench components\cite{b2}.
+\par
+In this paper, a generic methodology for processor verification using the Universal Verification Methodology and SystemVerilog capabilities is proposed. A case study is presented demonstrating our proposed methodology on three open source processors: Riscy, LEON 2.4, and Amber23.
+\par
+The rest of the paper is organized as follows: In chapter II, the proposed solution and methodology. In chapter III, the implementation. In chapter IV, the validation and results. And the paper is concluded in section V.
+
+\section{History And Background}
+
+
+      During the past decade, the time spent by the verification engineers to verify the functionality of the designs rose to more than 60 percent of the total project time. Even developers of smaller chips and FPGAs design are having problems with the past verification approaches. Our goal of verification becomes more difficult to get using conventional verification techniques.
+ 
+ 
+      Due to the complex design of a processor, processor verification is considered to be one of the most challenging problems facing verification engineers. The functional verification of a processor is the process of demonstrating the functional correctness of a processor design with respect to its specifications. The beginning of the verification process is creating a verification plan that defines what properties and functionalities need to be verified, what are the methods and approaches that will be used in processor testing and what is the expected behaviour of the design. As, it is the process of defining functional coverage models and functional specifications of the verification. Furthermore, the testing strategy is one of the major decisions taken in the verification planning phase. Directed testing is more convenient for testing single functionalities, but it is hard to hit more complex scenarios using only directed testing. On the other hand, constrained-random verification (CRV) can be very efficient in tackling processor verification challenges, such as: complex instruction sets, multiple pipeline-stages, in-order or out-of-order execution strategies, instruction parallelism and multi-precision operations. The most important module of a CRV environment is the test-case generator, which plays a very significant role in most of the recent approaches towards developing automated processor verification environments. A test-case generator generates a large set of valid test cases in a pseudo-random way controlled and guided by constrained randomness. The development of such test generators has started to get the attention of functional verification engineers, and researchers since the early 2000s.       
+ 
+           
+     Due to the poor and weak features of Hardware Description Languages (HDLs) available back then, Verilog and VHDL, in terms of verification and software, the development of these generators have been categorized as a software problem, tackled either by building them as software applications or by designing new scenario-level languages, such as Test-Template Language. However, recent efforts have been spent towards the utilization of System Verilog features as a Hardware Verification Language (HVL) to improve stimulus generation quality. The UVM gradually prevails the verification world, as it covers these needs. UVM is a powerful verification methodology that was designed to be able to verify a variety of different design sizes and design types. It is an open source SystemVerilog library allowing creation of flexible, reusable verification components and assembling powerful test environments utilizing constrained random stimulus generation and functional coverage methodologies \cite{b3}.
+There are two types of cores or processors: soft processors and hard processors. Soft processors is a microprocessor core that can be wholly implemented using logic synthesis. It can be implemented via different semiconductor devices containing programmable logic (e.g., ASIC, FPGA, CPLD).A hard-core processor is a processor that's actually physically implemented as a structure in the silicon. 
+      
+     
+\section{Problem definition}
+ 
+It  becomes possible for electronic system designers to assemble complete systems-on-chips due to the ever increasing advances in the integrated circuit technology. At the same time shrinking time to market leaves little room for errors in the design. So functional verification has become one of the main tasks in committing chips to fabrication. The need of standalone, pre-verified verification infrastructure is arisen so that verification does not become the bottleneck for the designers .The Verification Intellectual Property (Verification IP) is an important component of such infrastructure which can be easily inserted in the simulation-based tests.
+Any IP (e.g., a microprocessor) life-cycle from the verification process point of view can be divided into three phases: pre-silicon verification, post-silicon validation and runtime verification. Processor development takes a long time (2 years or more) and it is important to be able to detect bugs at all stages of processor development. Verifying a processor takes longer than design: the long tail of processor development is developing new tests for the processor and fixing any bugs. It is important that useful results can be obtained even in the early stages of verification — before the complete test infrastructure has been developed. Any verification technique requires significant investment so reusability not only of the technique but also of the infrastructure is critical \cite{b4}.
+UVM is used as it has Improved Verification quality due to constrained random verification. Test benches are  Reusable where The verification components or agents get instantiated within a verification environment inside a project, and they may require some modification to suit the requirements of this verification environment, also The overall verification environment could also be used and modified according to the requirements of a certain test.
+\par
+As a result to all the above reasons, there's a great demand for a reusable generic environment to verify microprocessors. Verification of IPs or even microprocessors using generic UVM becomes common and applicable but  the problem of verifying  microprocessors  by using separate verification environments or different approaches is still found, this problem cost the product a lot of time and effort to get into the market, so the need to make one verification environment or generic verification method for microprocessors is increasing every day. UVM is the best method to be used to make this generic verification environment due to its simplicity, reusability and its power in coverage and function testing.
+\section{objective}
+In this project, the main objective is to implement  only one generic UVM used to verify the functionality of different cores(soft processors).  these cores are mainly different in the instruction set architecture, the micro-architecture itself like the pipeline stages , the behaviour of cache memories,...etc.
+Our generic UVM tries to prove this idea using three different microprocessors which are:
+\begin{itemize}
+\item Amber 23 based on ARM-V2a ISA with three pipeline stages.
+\item Riscy core based on RISC-V ISA with four pipeline stages.
+\item LEON 2.4 based on SPARC-V8 ISA with five pipeline stages.
+
+\end{itemize}
+Our test bench can be used in verifying any core based on a certain ISA compatible with that of the three microprocessors used in proving the concept. Compatibility refers to have nearly the same specifications,,bus data width.
+\section{related work}
+
+For the best knowledge of the authors, this is the first Contribution in verifying different microprocessors (soft processors cores) using only one  verification environment.All the related works are based on the idea of implementing a UVM test bench to verify only one IP or even a microprocessor but it's first time to build one generic environment to verify different cores with the same testbench without any tweaking in the main components of the testbench itself.
+
+%\chapter{Chapter II} 
+Chapter II
+\section*{A.Challenges lead to the proposed solution}
+This section introduces the challenges that lead to the proposed methodology including the verification plan. In section B, the proposed verification methodology (including the UVM) is discussed.
+\par
+Building a generic environment for verifying different processors becomes a great demand but for reaching an efficient and professional test bench, verification steps must be done in an effective manner to get the required results, thus the verification Steps are:
+\usetikzlibrary{shapes,arrows}
+\begin{enumerate}
+\item Understanding the design specifications.
+\item Creating a verification plan.
+\item Identifying the verification methods required, test benches, coverage, and stimuli.
+\item Building the Verification environment (this part will be covered in details).
+\item Executing a plan: The development and running tests, find bugs, regress the test suite, create functional coverage.
+\end{enumerate}
+In this chapter the first three points in the verification steps will be discuss clearly.\par
+The design specification in our case can be interpreted  into studying the architecture of the cores well. The case study here is three different open-source cores based on different ISA and microarchitectures. Then building the verification plan that has to include all the previously studied specifications. 
+\par
+First of all, a general definition of the verification plan should be discussed which states that, it is a specification document for verification effort and a mechanism to ensure all essential features are verified as needed; it shows steps and effort needed to verify a specific design, So it should include the following criteria: 
+\begin{enumerate}
+\item What to verify?  Including the interesting design cases.
+\item Methodologies on how to verify.
+\item The required stimulus, checkers and coverage.
+\item Priority for features to be verified in a specific design under test (DUT).  
+\end{enumerate}
+\par
+Based on that, our plan has to demonstrate the technique that will be used in the implementation, or the different scenarios that must be taken into consideration to test all the functions. In other words, it clarifies the  test cases that can grouped into one function or even the different test cases among the cores. Figure 1 shows the flow of the verification plan.
+\newline
+As described in figure 1, the verification plan for our test bench is divided into two main parts:
+\begin{itemize}
+\item The First part includes all the interface signals (all input and output signals from and to the core) taking into consideration that we deal with the tested DUTs as a black box. Our implementation is built such that, the interface is dynamic (changeable according to the used DUT) and the environment is fixed (this point will be discussed in details in the Implementation chapter).
+\item The second part of the plan is the functionality test description for the ISA of each proposed core. Where the instructions needed to be verified are divided into functions. As the main challenge for implementing a generic test bench is that making it compatible with different ISA's as much as possible to save time and effort during the design verification process. Therefore, the main advantage of this plan is to analyze the similarities and differences between the three cores to act as a proof that we can verify different processors using the same environment.
+\newline
+\end{itemize} 
+\par
+For more clarification, the main challenges that we faced during designing the plan are: 
+\begin{itemize}
+\item The execution of the instruction in each core is different from the other. 
+\item Mapping the instruction format is also different in each core.
+ \item The instructions access to certain flags is different from each core.
+\end{itemize}
+%\newline
+%\newline
+%\newline
+%\newline
+%\newline
+%\newline
+\begin{center}
+\begin{figure}[h]
+\centering
+\tikzstyle{block1} = [rectangle, draw, fill=blue!25, text width=8em, text centered, rounded corners, minimum height=6em]
+\tikzstyle{block2} = [rectangle, draw, fill=blue!25, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{block6} = [rectangle, draw, fill=green!50, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{block7} = [rectangle, draw, fill=green!50, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{block8} = [rectangle, draw, fill=green!50, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{block3} = [rectangle, draw, fill=orange!50, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{block4} = [rectangle, draw, fill=orange!50, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{block5} = [rectangle, draw, fill=orange!50, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw,fill=blue!20, -latex']
+
+\begin{tikzpicture}[node distance = 4cm, auto]
+    % Place nodes
+    \node [block1] (function) {Functions};
+    \node [block2, below of=function,node distance=2.5cm] (isa) {instructions};
+    \node [block3, below of=isa  ,node distance=2cm](risc_int) {interface};
+    \node [block4, right of=risc_int,xshift=0.1cm ,node distance=2cm] (amber_int) {interface};
+    \node [block5, left of=risc_int ,xshift=-0.1cm ,node distance=2cm] (leon_int) {interface};
+    \node [block6, below of=leon_int  ,node distance=2cm](leon) {leon 2.4};
+    \node [block7, below of=risc_int,node distance=2cm] (risc) {riscy};
+    \node [block8, below of=amber_int ,node distance=2cm] (amber) {amber 23};
+    
+     
+    % Draw edges
+    \path [line] (function) -- (isa);
+   \path [line] (isa) -- (amber_int);
+    \path [line] (isa) -- (leon_int);
+    \path [line] (isa) -- (risc_int);
+    
+    \path [line] (risc_int) -- (risc);
+    \path [line] (risc) -- (risc_int);
+    \path [line] (amber) -- (amber_int);
+    \path [line] (amber_int) -- (amber);
+    \path [line] (leon_int) -- (leon);
+    \path [line] (leon) -- (leon_int);
+    
+\end{tikzpicture}   
+\label{Figure1:tikzpicture} 
+\caption{The verification plan flow} 
+\end{figure}
+\end{center}
+\section*{B.the Proposed Methodology}
+UVM is used to improve the verification quality due to the presence of constrained random verification. As the design complexity of SOCs and ASICs is increasing, so traditional test benches started failing the primary verification objective of bugs catching. Because, it was becoming impossible to simulate all the possible scenarios with the traditional test benches. As a result, the constrained random verification concept is basically allowing the user to generate random test vectors, which provided a way of exercising the DUT with more combinations of inputs in less simulation time. Constrained random verification depends on Checkers, Coverage and Constraints. Each of these "three C's" plays a key role in the verification process and is supported by SystemVerilog language. Furthermore, UVM enables the test Bench Re-usability on two main sectors:
+\newline a. The verification components or agents get instantiated within a verification environment inside a project, and they may require some modification to suit the requirements of this verification environment. \newline b. The overall verification environment could also be used and modified according to the requirements of a certain test.\newline
+\par
+The main goal of our methodology is to obtain a generic test bench for processor core verification, in other words, implementing a general and reusable verification methodology for any core with ISA compatible with the proposed ISAs, as our target is to verify the supported instruction set by the core. This is achieved by building the UVM test bench in a generic way then adding the core testing, that mainly includes the instructions of the tested core and anything related only to that core, and the tested core interface, described below. The main benefit of this methodology is that it enables the test writer to develop the tests based on a generic and reusable way, while keeping the microarchitectural claims and the instruction set details included in the added package and interface. Based on that, the proposed test bench can be used for both simple and complex design tests. This test bench is built in a layered way, keeping the microarchitectural claims at the lower level, and letting the test writer uses the proposed test bench for different test scenarios. The proposed methodology is shown in figure 2.\newline
+\begin{center}
+\begin{figure}[h]
+\centering
+\tikzstyle{block1} = [rectangle, draw, fill=blue!40, text width=8em, text centered, rounded corners, minimum height=10em]
+\tikzstyle{block2} = [rectangle, draw, fill=green!50, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{block3} = [rectangle, draw, fill=orange!50, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw=blue!50,thick,fill=blue!100,>=stealth, -latex']
+\begin{tikzpicture}[node distance = 4cm, auto]
+    % Place nodes
+    \node [block2] (pkg) {Core Testing};
+    %\node [block3, below of=pkg ,node distance=2cm] (infc) {Core Interface}; 
+    \node [block1, right of=pkg,node distance = 4cm] (uvm) {Generic UVM Test Bench};   
+    % Draw edges
+    \path [line] (pkg) -- (uvm);
+    \path [line] (uvm) -- (pkg);
+  %  \path [line] (infc) -- (uvm);  
+    %\path [line] (uvm) -- (infc);  
+\end{tikzpicture}  
+\caption{The proposed methodology} 
+  
+\label{Figure:tikzpicture} 
+\end{figure}
+\end{center}
+The structure of the methodology shown in figure 2 consists of:
+\begin{enumerate}
+\item Generic UVM test bench:
+The generic UVM test bench includes all the UVM components for the processor core testing.
+\item The core testing:
+it includes\begin{itemize}
+\item core package:It includes all the processor instructions that to be verified.\item The processor interface: 
+It includes the input and output ports of DUT. The interface has functions that the driver uses to drive instructions and data to the DUT, moreover, it deals with the clock and timing of each core regarding the timing constraints. \item the processor target sequence item including its format, Opcodes,...etc.\item top module of the Core including signals' instantiation.\item Core defines and its own parameters.
+\end{itemize} 
+\end{enumerate}
+To sum up the base that our idea is built on:
+verification of the soft processor core is done by connecting our UVM testbench to the target core's interface, Also its own package including all the supported ISA that is compatible with our cores and any features relate to this core. In the next chapter, all of that will be discussed clearly and the mechanism of doing that, in addition to that, the different scenarios and tests that has been done.\par
+\begin{center}
+\begin{figure}[h]
+\centering
+\tikzstyle{block1} = [rectangle, draw, fill=yellow!40, text width=5em,rounded corners, minimum height=3em]
+\tikzstyle{block2} = [rectangle, draw, fill=black!10, text width=5em, rounded corners, minimum height=3em]
+\tikzstyle{block3} = [rectangle, draw, fill=black!10, text width=5em, rounded corners, minimum height=3em]
+\tikzstyle{block4} = [rectangle, draw, fill=black!10, text width=5em, rounded corners, minimum height=3em]
+%\tikzstyle{block5} = [rectangle, draw, fill=black!5, text width=5em, text centered, rounded corners, minimum height=3em]
+%\tikzstyle{block6} = [rectangle, draw, fill=black!5, text width=5em, text centered, rounded corners, minimum height=3em]
+%\tikzstyle{block7} = [rectangle, draw, fill=black!5, text width=5em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{line} = [draw,fill=white!20, -latex']
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{tikzpicture}[node distance = 5cm, auto]
+    % Place nodes
+    \node [block1] (test) {Test Senario: \newline sequence1\newline seuence2\newline.\newline.\newline sequence n};
+   
+    \node [block3, below of=test] (seq2) {Sequence 2:  \newline Function 1\newline Function2\newline.\newline.\newline Function n };
+     \node [block2, left of=seq2,xshift=-0.5cm, node distance=2cm] (seq1) {Sequence 1:  \newline Function 1\newline Function2\newline.\newline.\newline Function n };
+    \node [block4, right of=seq2,xshift=0.5cm,node distance=2cm] (seqn) {Sequence n:  \newline Function 1\newline Function2\newline.\newline.\newline Function n };
+    %\node [block6, below of=seq2,node distance=3cm ] (opt2) {Function 2};
+    %\node [block5, left of=opt2 ,xshift=-0.5cm,node distance=3cm] (opt1) {Function 1};
+   % \node [block6, right of=opt2 ,xshift=0.5cm,node distance=3cm] (optn) {Function n};
+    %node distance=2cm
+    % Draw edges
+  %  \path [line] (test) -| (seq1);
+    \draw [line] (test) -- (seq1);
+    \path [line] (test) -- (seq2);
+    \path [line] (test) -- (seqn);
+   % \path [line] (seq2) -- (opt1); 
+   % \path [line] (seq2) -- (opt2);
+    %\path [line] (seq2) -- (optn); 
+\end{tikzpicture}  
+\caption{The test layered solution.} 
+\label{Figure3:tikzpicture} 
+\end{figure}
+\end{center}
+According to the mentioned challenges that were faced during the core verification, the proposed methodology includes a layered solution for the random generated stimulus for verification, as the proposed test bench enables different testing scenarios, each test enables different sequence scenarios for the group of instructions that have related functions, for example, a scenario of functional testing, includes the core instructions testing, which has different sequence scenarios for different group of instructions, like a sequence of testing the Arithmetic Logic Unit (ALU) instructions that have variety of functions, for example, Add, Subtract, Shift,....etc. Figure 3 describes the proposed solution for the stimulus generation.
+The layered solution shown in Figure 3 consists of:\begin{itemize}
+\item Test Scenario: \newline It is the desired scenario for testing the DUT, which is the test for functional verification in our case.
+\item Sequence: \newline It includes the stimulus of the group of instructions that have related functions, for example, a sequence for ALU instructions.
+\item Instruction's function: \newline It is the instruction function to be verified, for example, adding functionality is done by Add instruction.
+\end{itemize}
+%\section*{References}
+
+\begin{thebibliography}{00}
+%\bibliographystyle{IEEEtran}
+%\bibstyle 
+\bibitem{b1} "What’s the Deal with SoC Verification?", Electronic Design, 2020. [Online]. Available: https://www.electronicdesign.com/technologies/dsps/article/21795646/whats-the-deal-with-soc-verification.
+\newline
+\bibitem{b2} "VLSI design: Free online UVM training from Aldec", Eeherald.com, 2020. [Online]. Available: http://www.eeherald.com/section/news/onws2013020689.html.
+\newline
+\bibitem{b3} Khairallah, Mustafa and Ghoneima, Maged. (2014). Reusable Processor Verification Methodology Based on UVM. 10.13140/2.1.3936.9926.
+\newline
+\bibitem{b4} Alastair Reid, Rick Chen, Anastasios Deligiannis, David Gilday, David Hoyes, Will Keen, Ashan Pathirane, Owen Shepherd, Peter Vrabel, and Ali Zaidi," End-to-End Veriﬁcation of ARM® Processors with ISA-Formal ",Computer Aided Veriﬁcation, 2016.
+\newline
+%\bibitem{b5} Accellera.org. (2019). [online] Available at:
+ %https://accellera.org/images/downloads/standards/uvm/uvm_users_guide_1.2.pdf [Accessed 22 Sep. 2019]. 
+\end{thebibliography}
+
+\end{document}
+
+ 
