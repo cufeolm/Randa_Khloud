@@ -50,3 +50,5 @@
 `include "udivr.svh"
 `include "bitwise_and.svh"
 `include "MUL.svh"
+`include "atomic_load_store.svh"
+`include "atomic_load_store_ans.svh"

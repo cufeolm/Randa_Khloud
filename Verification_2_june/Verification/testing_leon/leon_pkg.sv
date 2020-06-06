@@ -15,7 +15,10 @@ package target_package;
         LSHRR=32'b11xxxxx011010xxxxx0xxxxxxxxxxxxx, // load signed half word reg-reg
         LUBRR=32'b11xxxxx010001xxxxx0xxxxxxxxxxxxx, // load unsigned byte reg-reg
         LUHRR=32'b11xxxxx010010xxxxx0xxxxxxxxxxxxx, // load unsigned half word reg-reg
-
+        ALUB=32'b11xxxxx001101xxxxx1xxxxxxxxxxxxx,  //Atomic load store
+        ALUBas=32'b11xxxxx011101xxxxx0xxxxxxxxxxxxx, //Atomic load store (from alternate space)
+        SRwM=32'b11xxxxx001111xxxxx1xxxxxxxxxxxxx,  // SWAP register with memory
+        SRwMas=32'b11xxxxx011111xxxxx0xxxxxxxxxxxxx, // SWAP Register with Memory (from alternate space) instruction
         SB=32'b11xxxxx000101xxxxx1xxxxxxxxxxxxx, // store least significant byte reg-imm
         SBRR=32'b11xxxxx010101xxxxx000001010xxxxx, // store least significant byte reg-reg
         SH=32'b11xxxxx000110xxxxx1xxxxxxxxxxxxx, // store least significant half word reg-imm

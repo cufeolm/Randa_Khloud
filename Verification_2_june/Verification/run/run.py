@@ -113,7 +113,7 @@ please choose which instruction to simulate:
 21-Bitwise And complement (based on RISC-v ISA,Sparcv8 ISA, ARMv8 ISA ): enter --> BAwc
 22-Unsigned Multiply (based on Sparcv8 ISA): enter -->UMULR
 23-Unsigned Multiply (based on ARMv8 ISA ): enter -->M
-
+24-Atomic load store (based on ARMv8 ISA ): enter -->ALUB
 any other input will simulate no operation or make an error in the simulation
 DUT: """;
 		z=raw_input(s)
@@ -163,6 +163,8 @@ DUT: """;
 			z=("UMULR")	
 		elif z == "23":
 			z=("M")	
+		elif z == "24":
+			z=("ALUB")	
 		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
 	elif g == "6":
 		y=("bief_test")
