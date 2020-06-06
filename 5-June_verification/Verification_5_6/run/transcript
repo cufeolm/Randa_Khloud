@@ -1,0 +1,1000 @@
+# vsim -novopt top +UVM_TESTNAME=A_type_test +ARG_INST=SRwMw
+# vsim -novopt top "+UVM_TESTNAME=A_type_test" "+ARG_INST=SRwMw" 
+# Start time: 14:27:50 on Jun 06,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# //  Questa Sim-64
+# //  Version 10.6c win64 Jul 26 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.top
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.target_package
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.target_package
+# Loading work.top
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.GUVM_interface
+# Loading work.GUVM_interface
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.a23_core
+# Loading work.a23_core
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.a23_fetch
+# Loading work.a23_fetch
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.a23_cache
+# Loading work.a23_cache
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.a23_wishbone
+# Loading work.a23_wishbone
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.a23_decode
+# Loading work.a23_decode
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.a23_execute
+# Loading work.a23_execute
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.a23_barrel_shift
+# Loading work.a23_barrel_shift
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.a23_alu
+# Loading work.a23_alu
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.a23_multiply
+# Loading work.a23_multiply
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.a23_register_bank
+# Loading work.a23_register_bank
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.a23_coprocessor
+# Loading work.a23_coprocessor
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.generic_sram_line_en
+# Loading work.generic_sram_line_en
+# Refreshing C:/Users/Randa/Desktop/GP-files/5-June_verification/Verification_5_6/run/work.generic_sram_byte_en
+# Loading work.generic_sram_byte_en
+# ** Warning: (vsim-3764) ../common/Tests/GUVM_test.sv(21): Stand-alone call to function 'clp' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /target_package File: ../testing_amber/amber_pkg.sv
+# ** Warning: (vsim-3764) ../common/Tests/A_type_test.sv(20): Stand-alone call to function 'clp' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /target_package File: ../testing_amber/amber_pkg.sv
+# ** Warning: (vsim-3017) ../../Implementation/dut_amber/amber23/a23_core.v(267): [TFMPC] - Too few port connections. Expected 58, found 57.
+#    Time: 0 ns  Iteration: 0  Instance: /top/dut/u_execute File: ../../Implementation/dut_amber/amber23/a23_execute.v
+# ** Warning: (vsim-3722) ../../Implementation/dut_amber/amber23/a23_core.v(267): [TFMPC] - Missing connection for port 'i_firq_not_user_mode_nxt'.
+# Loading C:/questasim64_10.6c/uvm-1.1d\win64\uvm_dpi.dll
+#  log /* -r 
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Randa  Hostname: DESKTOP-0MPNF9V  ProcessID: 3296
+#           Attempting to use alternate WLF file "./wlftcb09at".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftcb09at
+#  run -all 
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test A_type_test...
+# UVM_INFO ../common/GUVM_env.sv(22) @ 0: uvm_test_top.env_h [] Called env::connect_phase
+# test have started 
+# child_seq,SRwMw
+# load found in interface = e5905000
+# current_pc = 00000014                        110
+# -------------------------------
+# current_pc = 00000018                        130
+# -------------------------------
+# current_pc = 0000001c                        150
+# -------------------------------
+# current_pc = 0000001c                        170
+# -------------------------------
+# current_pc = 0000001c                        190
+# -------------------------------
+# current_pc = 00000020                        210
+# -------------------------------
+# load found in interface = e5904000
+# current_pc = 00000024                        230
+# -------------------------------
+# current_pc = 00000028                        250
+# -------------------------------
+# current_pc = 0000002c                        270
+# -------------------------------
+# current_pc = 0000002c                        290
+# -------------------------------
+# current_pc = 0000002c                        310
+# -------------------------------
+# current_pc = 00000030                        330
+# -------------------------------
+# load found in interface = e1053094
+# current_pc = 00000034                        350
+# -------------------------------
+# current_pc = 00000038                        370
+# -------------------------------
+# current_pc = 0000003c                        390
+# -------------------------------
+# current_pc = 0000003c                        410
+# -------------------------------
+# current_pc = 0000003c                        430
+# -------------------------------
+# current_pc = 0000003c                        450
+# -------------------------------
+# current_pc = 0000003c                        470
+# -------------------------------
+# current_pc = 0000003c                        490
+# -------------------------------
+# current_pc = 00000040                        510
+# -------------------------------
+# current_pc = 00000044                        530
+# -------------------------------
+# current_pc = 00000044                        550
+# -------------------------------
+# current_pc = 00000044                        570
+# -------------------------------
+# current_pc = 00000044                        590
+# -------------------------------
+# load found in interface = e1053094
+# UVM_INFO ../common/inst_h/swap_word.svh(52) @ 610: reporter [SWAP_PASS] DUT Calculation=895e81c0 SCOREBOARD Calculation=895e81c0 DUT memory address Calculation=b1f05660 SCOREBOARD memory address Calculation=10110001111100000101011001100011 
+# yay time to print my history
+# --- reg_file Values are ---
+# 	reg_file[0] = '{data:2985317987, add:5} b1f05663
+# 	reg_file[1] = '{data:1189058957, add:4} 46df998d
+# 	reg_file[2] = '{data:2304672192, add:3} 895e81c0
+# ---------------------------------
+# seq#          0 pc         20 inst e5905000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          1 pc         24 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          2 pc         28 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          3 pc         28 inst b1f05663 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          4 pc         28 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          5 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          6 pc         36 inst e5904000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          7 pc         40 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          8 pc         44 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          9 pc         44 inst 46df998d result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         10 pc         44 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         11 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         12 pc         52 inst e1053094 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         13 pc         56 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         14 pc         60 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         15 pc         60 inst c0895e81 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         16 pc         60 inst f0800000 result:00000000 mem_add:b1f05660 data_write_e:1111
+# seq#         17 pc         60 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         18 pc         60 inst e5803000 result:46df998d mem_add:b1f05660 data_write_e:1111
+# seq#         19 pc         60 inst e5803000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         20 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         21 pc         68 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         22 pc         68 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         23 pc         68 inst f0800000 result:895e81c0 mem_add:00000000 data_write_e:1111
+# seq#         24 pc         68 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         25 pc         52 inst e1053094 result:00000000 mem_add:00000000 data_write_e:1111
+# -------------------------------
+# child_seq,SRwMw
+# load found in interface = e5903000
+# current_pc = 00000018                        870
+# -------------------------------
+# current_pc = 0000001c                        890
+# -------------------------------
+# current_pc = 00000020                        910
+# -------------------------------
+# current_pc = 00000020                        930
+# -------------------------------
+# current_pc = 00000020                        950
+# -------------------------------
+# current_pc = 00000024                        970
+# -------------------------------
+# load found in interface = e5902000
+# current_pc = 00000028                        990
+# -------------------------------
+# current_pc = 0000002c                       1010
+# -------------------------------
+# current_pc = 00000030                       1030
+# -------------------------------
+# current_pc = 00000030                       1050
+# -------------------------------
+# current_pc = 00000030                       1070
+# -------------------------------
+# current_pc = 00000034                       1090
+# -------------------------------
+# load found in interface = e1030092
+# current_pc = 00000038                       1110
+# -------------------------------
+# current_pc = 0000003c                       1130
+# -------------------------------
+# current_pc = 00000040                       1150
+# -------------------------------
+# current_pc = 00000040                       1170
+# -------------------------------
+# current_pc = 00000040                       1190
+# -------------------------------
+# current_pc = 00000040                       1210
+# -------------------------------
+# current_pc = 00000040                       1230
+# -------------------------------
+# current_pc = 00000044                       1250
+# -------------------------------
+# current_pc = 00000048                       1270
+# -------------------------------
+# current_pc = 00000048                       1290
+# -------------------------------
+# current_pc = 00000048                       1310
+# -------------------------------
+# current_pc = 00000048                       1330
+# -------------------------------
+# current_pc = 0000004c                       1350
+# -------------------------------
+# load found in interface = e1030092
+# UVM_INFO ../common/inst_h/swap_word.svh(52) @ 1370: reporter [SWAP_PASS] DUT Calculation=4c3c9e31 SCOREBOARD Calculation=4c3c9e31 DUT memory address Calculation=4c3c9e30 SCOREBOARD memory address Calculation=1000101001011100110000110001010 
+# yay time to print my history
+# --- reg_file Values are ---
+# 	reg_file[0] = '{data:1160667530, add:3} 452e618a
+# 	reg_file[1] = '{data:3964351704, add:2} ec4b34d8
+# 	reg_file[2] = '{data:1279041073, add:0} 4c3c9e31
+# ---------------------------------
+# seq#          0 pc         24 inst e5903000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          1 pc         28 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          2 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          3 pc         32 inst 452e618a result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          4 pc         32 inst f0800000 result:00000000 mem_add:00000020 data_write_e:1111
+# seq#          5 pc         36 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          6 pc         40 inst e5902000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          7 pc         44 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          8 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          9 pc         48 inst ec4b34d8 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         10 pc         48 inst f0800000 result:00000000 mem_add:00000030 data_write_e:1111
+# seq#         11 pc         52 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         12 pc         56 inst e1030092 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         13 pc         60 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         14 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         15 pc         64 inst 9e314c3c result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         16 pc         64 inst f0800000 result:00000000 mem_add:00000040 data_write_e:1111
+# seq#         17 pc         64 inst f0800000 result:ec4b34d8 mem_add:452e6188 data_write_e:1111
+# seq#         18 pc         64 inst e5800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         19 pc         68 inst e5800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         20 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         21 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         22 pc         72 inst f0800000 result:4c3c9e31 mem_add:4c3c9e30 data_write_e:1111
+# seq#         23 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         24 pc         76 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         25 pc         56 inst e1030092 result:00000000 mem_add:00000000 data_write_e:1111
+# -------------------------------
+# child_seq,SRwMw
+# load found in interface = e5902000
+# current_pc = 00000018                       1630
+# -------------------------------
+# current_pc = 0000001c                       1650
+# -------------------------------
+# current_pc = 00000020                       1670
+# -------------------------------
+# current_pc = 00000020                       1690
+# -------------------------------
+# current_pc = 00000020                       1710
+# -------------------------------
+# current_pc = 00000024                       1730
+# -------------------------------
+# load found in interface = e5907000
+# current_pc = 00000028                       1750
+# -------------------------------
+# current_pc = 0000002c                       1770
+# -------------------------------
+# current_pc = 00000030                       1790
+# -------------------------------
+# current_pc = 00000030                       1810
+# -------------------------------
+# current_pc = 00000030                       1830
+# -------------------------------
+# current_pc = 00000034                       1850
+# -------------------------------
+# load found in interface = e1020097
+# current_pc = 00000038                       1870
+# -------------------------------
+# current_pc = 0000003c                       1890
+# -------------------------------
+# current_pc = 00000040                       1910
+# -------------------------------
+# current_pc = 00000040                       1930
+# -------------------------------
+# current_pc = 00000040                       1950
+# -------------------------------
+# current_pc = 00000040                       1970
+# -------------------------------
+# current_pc = 00000040                       1990
+# -------------------------------
+# current_pc = 00000040                       2010
+# -------------------------------
+# current_pc = 00000044                       2030
+# -------------------------------
+# current_pc = 00000048                       2050
+# -------------------------------
+# current_pc = 00000048                       2070
+# -------------------------------
+# current_pc = 00000048                       2090
+# -------------------------------
+# current_pc = 00000048                       2110
+# -------------------------------
+# load found in interface = e1020097
+# UVM_INFO ../common/inst_h/swap_word.svh(52) @ 2130: reporter [SWAP_PASS] DUT Calculation=e9ebf6d3 SCOREBOARD Calculation=e9ebf6d3 DUT memory address Calculation=e9ebf6d0 SCOREBOARD memory address Calculation=10111100000101001000100001111000 
+# yay time to print my history
+# --- reg_file Values are ---
+# 	reg_file[0] = '{data:3155462264, add:2} bc148878
+# 	reg_file[1] = '{data:613108553, add:7} 248b4b49
+# 	reg_file[2] = '{data:3924555475, add:0} e9ebf6d3
+# ---------------------------------
+# seq#          0 pc         24 inst e5902000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          1 pc         28 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          2 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          3 pc         32 inst bc148878 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          4 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          5 pc         36 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          6 pc         40 inst e5907000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          7 pc         44 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          8 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          9 pc         48 inst 248b4b49 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         10 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         11 pc         52 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         12 pc         56 inst e1020097 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         13 pc         60 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         14 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         15 pc         64 inst e9ebf6d3 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         16 pc         64 inst f0800000 result:00000000 mem_add:bc148878 data_write_e:1111
+# seq#         17 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         18 pc         64 inst e5800000 result:248b4b49 mem_add:bc148878 data_write_e:1111
+# seq#         19 pc         64 inst e5800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         20 pc         68 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         21 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         22 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         23 pc         72 inst f0800000 result:e9ebf6d3 mem_add:e9ebf6d0 data_write_e:1111
+# seq#         24 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         25 pc         56 inst e1020097 result:00000000 mem_add:00000000 data_write_e:1111
+# -------------------------------
+# child_seq,SRwMw
+# load found in interface = e5904000
+# current_pc = 00000018                       2390
+# -------------------------------
+# current_pc = 0000001c                       2410
+# -------------------------------
+# current_pc = 00000020                       2430
+# -------------------------------
+# current_pc = 00000020                       2450
+# -------------------------------
+# current_pc = 00000020                       2470
+# -------------------------------
+# current_pc = 00000024                       2490
+# -------------------------------
+# load found in interface = e5904000
+# current_pc = 00000028                       2510
+# -------------------------------
+# current_pc = 0000002c                       2530
+# -------------------------------
+# current_pc = 00000030                       2550
+# -------------------------------
+# current_pc = 00000030                       2570
+# -------------------------------
+# current_pc = 00000030                       2590
+# -------------------------------
+# current_pc = 00000034                       2610
+# -------------------------------
+# load found in interface = e1043094
+# current_pc = 00000038                       2630
+# -------------------------------
+# current_pc = 0000003c                       2650
+# -------------------------------
+# current_pc = 00000040                       2670
+# -------------------------------
+# current_pc = 00000040                       2690
+# -------------------------------
+# current_pc = 00000040                       2710
+# -------------------------------
+# current_pc = 00000040                       2730
+# -------------------------------
+# current_pc = 00000040                       2750
+# -------------------------------
+# current_pc = 00000044                       2770
+# -------------------------------
+# current_pc = 00000048                       2790
+# -------------------------------
+# current_pc = 00000048                       2810
+# -------------------------------
+# current_pc = 00000048                       2830
+# -------------------------------
+# current_pc = 00000048                       2850
+# -------------------------------
+# current_pc = 0000004c                       2870
+# -------------------------------
+# load found in interface = e1043094
+# UVM_ERROR ../common/inst_h/swap_word.svh(56) @ 2890: reporter [SWAP_FAIL] DUT Calculation=9349c65d SCOREBOARD Calculation=c65d9349 DUT memory address Calculation=a6fcde4c SCOREBOARD memory address Calculation=10100110111111001101111001001101 
+# yay time to print my history
+# --- reg_file Values are ---
+# 	reg_file[0] = '{data:2801589837, add:4} a6fcde4d
+# 	reg_file[1] = '{data:3328021321, add:3} c65d9349
+# ---------------------------------
+# seq#          0 pc         24 inst e5904000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          1 pc         28 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          2 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          3 pc         32 inst acb7ca59 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          4 pc         32 inst f0800000 result:00000000 mem_add:00000020 data_write_e:1111
+# seq#          5 pc         36 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          6 pc         40 inst e5904000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          7 pc         44 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          8 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          9 pc         48 inst a6fcde4d result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         10 pc         48 inst f0800000 result:00000000 mem_add:00000030 data_write_e:1111
+# seq#         11 pc         52 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         12 pc         56 inst e1043094 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         13 pc         60 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         14 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         15 pc         64 inst 49c65d93 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         16 pc         64 inst f0800000 result:00000000 mem_add:00000040 data_write_e:1111
+# seq#         17 pc         64 inst f0800000 result:a6fcde4d mem_add:a6fcde4c data_write_e:1111
+# seq#         18 pc         64 inst e5803000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         19 pc         68 inst e5803000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         20 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         21 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         22 pc         72 inst f0800000 result:9349c65d mem_add:00000000 data_write_e:1111
+# seq#         23 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         24 pc         76 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         25 pc         56 inst e1043094 result:00000000 mem_add:00000000 data_write_e:1111
+# -------------------------------
+# child_seq,SRwMw
+# load found in interface = e5902000
+# current_pc = 00000018                       3150
+# -------------------------------
+# current_pc = 0000001c                       3170
+# -------------------------------
+# current_pc = 00000020                       3190
+# -------------------------------
+# current_pc = 00000020                       3210
+# -------------------------------
+# current_pc = 00000020                       3230
+# -------------------------------
+# current_pc = 00000024                       3250
+# -------------------------------
+# load found in interface = e5906000
+# current_pc = 00000028                       3270
+# -------------------------------
+# current_pc = 0000002c                       3290
+# -------------------------------
+# current_pc = 00000030                       3310
+# -------------------------------
+# current_pc = 00000030                       3330
+# -------------------------------
+# current_pc = 00000030                       3350
+# -------------------------------
+# current_pc = 00000034                       3370
+# -------------------------------
+# load found in interface = e1021096
+# current_pc = 00000038                       3390
+# -------------------------------
+# current_pc = 0000003c                       3410
+# -------------------------------
+# current_pc = 00000040                       3430
+# -------------------------------
+# current_pc = 00000040                       3450
+# -------------------------------
+# current_pc = 00000040                       3470
+# -------------------------------
+# current_pc = 00000040                       3490
+# -------------------------------
+# current_pc = 00000040                       3510
+# -------------------------------
+# current_pc = 00000040                       3530
+# -------------------------------
+# current_pc = 00000044                       3550
+# -------------------------------
+# current_pc = 00000048                       3570
+# -------------------------------
+# current_pc = 00000048                       3590
+# -------------------------------
+# current_pc = 00000048                       3610
+# -------------------------------
+# current_pc = 00000048                       3630
+# -------------------------------
+# load found in interface = e1021096
+# UVM_ERROR ../common/inst_h/swap_word.svh(56) @ 3650: reporter [SWAP_FAIL] DUT Calculation=dbed8d80 SCOREBOARD Calculation=8d80dbed DUT memory address Calculation=3ced2b78 SCOREBOARD memory address Calculation=111100111011010010101101111001 
+# yay time to print my history
+# --- reg_file Values are ---
+# 	reg_file[0] = '{data:1022176121, add:2} 3ced2b79
+# 	reg_file[1] = '{data:2965171809, add:6} b0bcee61
+# 	reg_file[2] = '{data:2374032365, add:1} 8d80dbed
+# ---------------------------------
+# seq#          0 pc         24 inst e5902000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          1 pc         28 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          2 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          3 pc         32 inst 3ced2b79 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          4 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          5 pc         36 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          6 pc         40 inst e5906000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          7 pc         44 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          8 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          9 pc         48 inst b0bcee61 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         10 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         11 pc         52 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         12 pc         56 inst e1021096 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         13 pc         60 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         14 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         15 pc         64 inst ed8d80db result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         16 pc         64 inst f0800000 result:00000000 mem_add:3ced2b78 data_write_e:1111
+# seq#         17 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         18 pc         64 inst e5801000 result:b0bcee61 mem_add:3ced2b78 data_write_e:1111
+# seq#         19 pc         64 inst e5801000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         20 pc         68 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         21 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         22 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         23 pc         72 inst f0800000 result:dbed8d80 mem_add:00000000 data_write_e:1111
+# seq#         24 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         25 pc         56 inst e1021096 result:00000000 mem_add:00000000 data_write_e:1111
+# -------------------------------
+# child_seq,SRwMw
+# load found in interface = e5905000
+# current_pc = 00000018                       3910
+# -------------------------------
+# current_pc = 0000001c                       3930
+# -------------------------------
+# current_pc = 00000020                       3950
+# -------------------------------
+# current_pc = 00000020                       3970
+# -------------------------------
+# current_pc = 00000020                       3990
+# -------------------------------
+# current_pc = 00000024                       4010
+# -------------------------------
+# load found in interface = e5902000
+# current_pc = 00000028                       4030
+# -------------------------------
+# current_pc = 0000002c                       4050
+# -------------------------------
+# current_pc = 00000030                       4070
+# -------------------------------
+# current_pc = 00000030                       4090
+# -------------------------------
+# current_pc = 00000030                       4110
+# -------------------------------
+# current_pc = 00000034                       4130
+# -------------------------------
+# load found in interface = e1052092
+# current_pc = 00000038                       4150
+# -------------------------------
+# current_pc = 0000003c                       4170
+# -------------------------------
+# current_pc = 00000040                       4190
+# -------------------------------
+# current_pc = 00000040                       4210
+# -------------------------------
+# current_pc = 00000040                       4230
+# -------------------------------
+# current_pc = 00000040                       4250
+# -------------------------------
+# current_pc = 00000040                       4270
+# -------------------------------
+# current_pc = 00000044                       4290
+# -------------------------------
+# current_pc = 00000048                       4310
+# -------------------------------
+# current_pc = 00000048                       4330
+# -------------------------------
+# current_pc = 00000048                       4350
+# -------------------------------
+# current_pc = 00000048                       4370
+# -------------------------------
+# current_pc = 0000004c                       4390
+# -------------------------------
+# load found in interface = e1052092
+# UVM_INFO ../common/inst_h/swap_word.svh(52) @ 4410: reporter [SWAP_PASS] DUT Calculation=dece5ebd SCOREBOARD Calculation=dece5ebd DUT memory address Calculation=f249a4e4 SCOREBOARD memory address Calculation=11110010010010011010010011100100 
+# yay time to print my history
+# --- reg_file Values are ---
+# 	reg_file[0] = '{data:4064912612, add:5} f249a4e4
+# 	reg_file[1] = '{data:3738066621, add:2} dece5ebd
+# ---------------------------------
+# seq#          0 pc         24 inst e5905000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          1 pc         28 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          2 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          3 pc         32 inst f249a4e4 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          4 pc         32 inst f0800000 result:00000000 mem_add:00000020 data_write_e:1111
+# seq#          5 pc         36 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          6 pc         40 inst e5902000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          7 pc         44 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          8 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          9 pc         48 inst 54a879a9 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         10 pc         48 inst f0800000 result:00000000 mem_add:00000030 data_write_e:1111
+# seq#         11 pc         52 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         12 pc         56 inst e1052092 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         13 pc         60 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         14 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         15 pc         64 inst dece5ebd result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         16 pc         64 inst f0800000 result:00000000 mem_add:00000040 data_write_e:1111
+# seq#         17 pc         64 inst f0800000 result:54a879a9 mem_add:f249a4e4 data_write_e:1111
+# seq#         18 pc         64 inst e5802000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         19 pc         68 inst e5802000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         20 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         21 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         22 pc         72 inst f0800000 result:dece5ebd mem_add:00000000 data_write_e:1111
+# seq#         23 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         24 pc         76 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         25 pc         56 inst e1052092 result:00000000 mem_add:00000000 data_write_e:1111
+# -------------------------------
+# child_seq,SRwMw
+# load found in interface = e5905000
+# current_pc = 00000018                       4670
+# -------------------------------
+# current_pc = 0000001c                       4690
+# -------------------------------
+# current_pc = 00000020                       4710
+# -------------------------------
+# current_pc = 00000020                       4730
+# -------------------------------
+# current_pc = 00000020                       4750
+# -------------------------------
+# current_pc = 00000024                       4770
+# -------------------------------
+# load found in interface = e5907000
+# current_pc = 00000028                       4790
+# -------------------------------
+# current_pc = 0000002c                       4810
+# -------------------------------
+# current_pc = 00000030                       4830
+# -------------------------------
+# current_pc = 00000030                       4850
+# -------------------------------
+# current_pc = 00000030                       4870
+# -------------------------------
+# current_pc = 00000034                       4890
+# -------------------------------
+# load found in interface = e1055097
+# current_pc = 00000038                       4910
+# -------------------------------
+# current_pc = 0000003c                       4930
+# -------------------------------
+# current_pc = 00000040                       4950
+# -------------------------------
+# current_pc = 00000040                       4970
+# -------------------------------
+# current_pc = 00000040                       4990
+# -------------------------------
+# current_pc = 00000040                       5010
+# -------------------------------
+# current_pc = 00000040                       5030
+# -------------------------------
+# current_pc = 00000040                       5050
+# -------------------------------
+# current_pc = 00000044                       5070
+# -------------------------------
+# current_pc = 00000048                       5090
+# -------------------------------
+# current_pc = 00000048                       5110
+# -------------------------------
+# current_pc = 00000048                       5130
+# -------------------------------
+# current_pc = 00000048                       5150
+# -------------------------------
+# load found in interface = e1055097
+# UVM_INFO ../common/inst_h/swap_word.svh(52) @ 5170: reporter [SWAP_PASS] DUT Calculation=50d5f9a1 SCOREBOARD Calculation=50d5f9a1 DUT memory address Calculation=82223a04 SCOREBOARD memory address Calculation=10000010001000100011101000000100 
+# yay time to print my history
+# --- reg_file Values are ---
+# 	reg_file[0] = '{data:1356200353, add:5} 50d5f9a1
+# 	reg_file[1] = '{data:3411837078, add:7} cb5c8096
+# ---------------------------------
+# seq#          0 pc         24 inst e5905000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          1 pc         28 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          2 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          3 pc         32 inst 82223a04 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          4 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          5 pc         36 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          6 pc         40 inst e5907000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          7 pc         44 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          8 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          9 pc         48 inst cb5c8096 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         10 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         11 pc         52 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         12 pc         56 inst e1055097 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         13 pc         60 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         14 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         15 pc         64 inst 50d5f9a1 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         16 pc         64 inst f0800000 result:00000000 mem_add:82223a04 data_write_e:1111
+# seq#         17 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         18 pc         64 inst e5805000 result:cb5c8096 mem_add:82223a04 data_write_e:1111
+# seq#         19 pc         64 inst e5805000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         20 pc         68 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         21 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         22 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         23 pc         72 inst f0800000 result:50d5f9a1 mem_add:00000000 data_write_e:1111
+# seq#         24 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         25 pc         56 inst e1055097 result:00000000 mem_add:00000000 data_write_e:1111
+# -------------------------------
+# child_seq,SRwMw
+# load found in interface = e5904000
+# current_pc = 00000018                       5430
+# -------------------------------
+# current_pc = 0000001c                       5450
+# -------------------------------
+# current_pc = 00000020                       5470
+# -------------------------------
+# current_pc = 00000020                       5490
+# -------------------------------
+# current_pc = 00000020                       5510
+# -------------------------------
+# current_pc = 00000024                       5530
+# -------------------------------
+# load found in interface = e5905000
+# current_pc = 00000028                       5550
+# -------------------------------
+# current_pc = 0000002c                       5570
+# -------------------------------
+# current_pc = 00000030                       5590
+# -------------------------------
+# current_pc = 00000030                       5610
+# -------------------------------
+# current_pc = 00000030                       5630
+# -------------------------------
+# current_pc = 00000034                       5650
+# -------------------------------
+# load found in interface = e1043095
+# current_pc = 00000038                       5670
+# -------------------------------
+# current_pc = 0000003c                       5690
+# -------------------------------
+# current_pc = 00000040                       5710
+# -------------------------------
+# current_pc = 00000040                       5730
+# -------------------------------
+# current_pc = 00000040                       5750
+# -------------------------------
+# current_pc = 00000040                       5770
+# -------------------------------
+# current_pc = 00000040                       5790
+# -------------------------------
+# current_pc = 00000044                       5810
+# -------------------------------
+# current_pc = 00000048                       5830
+# -------------------------------
+# current_pc = 00000048                       5850
+# -------------------------------
+# current_pc = 00000048                       5870
+# -------------------------------
+# current_pc = 00000048                       5890
+# -------------------------------
+# current_pc = 0000004c                       5910
+# -------------------------------
+# load found in interface = e1043095
+# UVM_INFO ../common/inst_h/swap_word.svh(52) @ 5930: reporter [SWAP_PASS] DUT Calculation=b14ee1f0 SCOREBOARD Calculation=b14ee1f0 DUT memory address Calculation=a18bee40 SCOREBOARD memory address Calculation=10100001100010111110111001000011 
+# yay time to print my history
+# --- reg_file Values are ---
+# 	reg_file[0] = '{data:2710302275, add:4} a18bee43
+# 	reg_file[1] = '{data:3275097222, add:5} c3360486
+# 	reg_file[2] = '{data:2974736880, add:3} b14ee1f0
+# ---------------------------------
+# seq#          0 pc         24 inst e5904000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          1 pc         28 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          2 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          3 pc         32 inst a18bee43 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          4 pc         32 inst f0800000 result:00000000 mem_add:00000020 data_write_e:1111
+# seq#          5 pc         36 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          6 pc         40 inst e5905000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          7 pc         44 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          8 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          9 pc         48 inst c3360486 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         10 pc         48 inst f0800000 result:00000000 mem_add:00000030 data_write_e:1111
+# seq#         11 pc         52 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         12 pc         56 inst e1043095 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         13 pc         60 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         14 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         15 pc         64 inst f0b14ee1 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         16 pc         64 inst f0800000 result:00000000 mem_add:00000040 data_write_e:1111
+# seq#         17 pc         64 inst f0800000 result:c3360486 mem_add:a18bee40 data_write_e:1111
+# seq#         18 pc         64 inst e5803000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         19 pc         68 inst e5803000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         20 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         21 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         22 pc         72 inst f0800000 result:b14ee1f0 mem_add:00000000 data_write_e:1111
+# seq#         23 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         24 pc         76 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         25 pc         56 inst e1043095 result:00000000 mem_add:00000000 data_write_e:1111
+# -------------------------------
+# child_seq,SRwMw
+# load found in interface = e5902000
+# current_pc = 00000018                       6190
+# -------------------------------
+# current_pc = 0000001c                       6210
+# -------------------------------
+# current_pc = 00000020                       6230
+# -------------------------------
+# current_pc = 00000020                       6250
+# -------------------------------
+# current_pc = 00000020                       6270
+# -------------------------------
+# current_pc = 00000024                       6290
+# -------------------------------
+# load found in interface = e5907000
+# current_pc = 00000028                       6310
+# -------------------------------
+# current_pc = 0000002c                       6330
+# -------------------------------
+# current_pc = 00000030                       6350
+# -------------------------------
+# current_pc = 00000030                       6370
+# -------------------------------
+# current_pc = 00000030                       6390
+# -------------------------------
+# current_pc = 00000034                       6410
+# -------------------------------
+# load found in interface = e1024097
+# current_pc = 00000038                       6430
+# -------------------------------
+# current_pc = 0000003c                       6450
+# -------------------------------
+# current_pc = 00000040                       6470
+# -------------------------------
+# current_pc = 00000040                       6490
+# -------------------------------
+# current_pc = 00000040                       6510
+# -------------------------------
+# current_pc = 00000040                       6530
+# -------------------------------
+# current_pc = 00000040                       6550
+# -------------------------------
+# current_pc = 00000040                       6570
+# -------------------------------
+# current_pc = 00000044                       6590
+# -------------------------------
+# current_pc = 00000048                       6610
+# -------------------------------
+# current_pc = 00000048                       6630
+# -------------------------------
+# current_pc = 00000048                       6650
+# -------------------------------
+# current_pc = 00000048                       6670
+# -------------------------------
+# load found in interface = e1024097
+# UVM_INFO ../common/inst_h/swap_word.svh(52) @ 6690: reporter [SWAP_PASS] DUT Calculation=616a352d SCOREBOARD Calculation=616a352d DUT memory address Calculation=d55bbca8 SCOREBOARD memory address Calculation=11010101010110111011110010101010 
+# yay time to print my history
+# --- reg_file Values are ---
+# 	reg_file[0] = '{data:3579559082, add:2} d55bbcaa
+# 	reg_file[1] = '{data:2958164576, add:7} b0520260
+# 	reg_file[2] = '{data:1634350381, add:4} 616a352d
+# ---------------------------------
+# seq#          0 pc         24 inst e5902000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          1 pc         28 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          2 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          3 pc         32 inst d55bbcaa result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          4 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          5 pc         36 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          6 pc         40 inst e5907000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          7 pc         44 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          8 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          9 pc         48 inst b0520260 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         10 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         11 pc         52 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         12 pc         56 inst e1024097 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         13 pc         60 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         14 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         15 pc         64 inst 352d616a result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         16 pc         64 inst f0800000 result:00000000 mem_add:d55bbca8 data_write_e:1111
+# seq#         17 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         18 pc         64 inst e5804000 result:b0520260 mem_add:d55bbca8 data_write_e:1111
+# seq#         19 pc         64 inst e5804000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         20 pc         68 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         21 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         22 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         23 pc         72 inst f0800000 result:616a352d mem_add:00000000 data_write_e:1111
+# seq#         24 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         25 pc         56 inst e1024097 result:00000000 mem_add:00000000 data_write_e:1111
+# -------------------------------
+# child_seq,SRwMw
+# load found in interface = e5901000
+# current_pc = 00000018                       6950
+# -------------------------------
+# current_pc = 0000001c                       6970
+# -------------------------------
+# current_pc = 00000020                       6990
+# -------------------------------
+# current_pc = 00000020                       7010
+# -------------------------------
+# current_pc = 00000020                       7030
+# -------------------------------
+# current_pc = 00000024                       7050
+# -------------------------------
+# load found in interface = e5900000
+# current_pc = 00000028                       7070
+# -------------------------------
+# current_pc = 0000002c                       7090
+# -------------------------------
+# current_pc = 00000030                       7110
+# -------------------------------
+# current_pc = 00000030                       7130
+# -------------------------------
+# current_pc = 00000030                       7150
+# -------------------------------
+# current_pc = 00000034                       7170
+# -------------------------------
+# load found in interface = e1017090
+# current_pc = 00000038                       7190
+# -------------------------------
+# current_pc = 0000003c                       7210
+# -------------------------------
+# current_pc = 00000040                       7230
+# -------------------------------
+# current_pc = 00000040                       7250
+# -------------------------------
+# current_pc = 00000040                       7270
+# -------------------------------
+# current_pc = 00000040                       7290
+# -------------------------------
+# current_pc = 00000040                       7310
+# -------------------------------
+# current_pc = 00000044                       7330
+# -------------------------------
+# current_pc = 00000048                       7350
+# -------------------------------
+# current_pc = 00000048                       7370
+# -------------------------------
+# current_pc = 00000048                       7390
+# -------------------------------
+# current_pc = 00000048                       7410
+# -------------------------------
+# current_pc = 0000004c                       7430
+# -------------------------------
+# load found in interface = e1017090
+# UVM_INFO ../common/inst_h/swap_word.svh(52) @ 7450: reporter [SWAP_PASS] DUT Calculation=aed72e5d SCOREBOARD Calculation=aed72e5d DUT memory address Calculation=1c8d7f38 SCOREBOARD memory address Calculation=1000010001001101010100110000100 
+# yay time to print my history
+# --- reg_file Values are ---
+# 	reg_file[0] = '{data:1109830020, add:1} 4226a984
+# 	reg_file[1] = '{data:479035193, add:0} 1c8d7f39
+# 	reg_file[2] = '{data:2933337693, add:7} aed72e5d
+# ---------------------------------
+# seq#          0 pc         24 inst e5901000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          1 pc         28 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          2 pc         32 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          3 pc         32 inst 4226a984 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          4 pc         32 inst f0800000 result:00000000 mem_add:00000020 data_write_e:1111
+# seq#          5 pc         36 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          6 pc         40 inst e5900000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          7 pc         44 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          8 pc         48 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#          9 pc         48 inst 1c8d7f39 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         10 pc         48 inst f0800000 result:00000000 mem_add:00000030 data_write_e:1111
+# seq#         11 pc         52 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         12 pc         56 inst e1017090 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         13 pc         60 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         14 pc         64 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         15 pc         64 inst aed72e5d result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         16 pc         64 inst f0800000 result:00000000 mem_add:00000040 data_write_e:1111
+# seq#         17 pc         64 inst f0800000 result:1c8d7f39 mem_add:4226a984 data_write_e:1111
+# seq#         18 pc         64 inst e5807000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         19 pc         68 inst e5807000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         20 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         21 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         22 pc         72 inst f0800000 result:aed72e5d mem_add:1c8d7f38 data_write_e:1111
+# seq#         23 pc         72 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         24 pc         76 inst f0800000 result:00000000 mem_add:00000000 data_write_e:1111
+# seq#         25 pc         56 inst e1017090 result:00000000 mem_add:00000000 data_write_e:1111
+# -------------------------------
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 7590: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   13
+# UVM_WARNING :    0
+# UVM_ERROR :    2
+# UVM_FATAL :    0
+# ** Report counts by id
+# []     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [SWAP_FAIL]     2
+# [SWAP_PASS]     8
+# [TEST_DONE]     1
+# ** Note: $finish    : C:/questasim64_10.6c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 7590 ns  Iteration: 62  Instance: /top
+# End time: 14:27:57 on Jun 06,2020, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 7
