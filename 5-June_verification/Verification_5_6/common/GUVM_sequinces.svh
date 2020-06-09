@@ -8,4 +8,4 @@
 `include"arith_flag_seq.sv"
 `include"store_seq.sv"
 `include"mul_sequence.sv"
-
+`include "compare_seq.sv"

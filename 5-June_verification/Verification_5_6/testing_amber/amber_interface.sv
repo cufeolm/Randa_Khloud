@@ -59,11 +59,12 @@ interface GUVM_interface(input clk);
 
     // sending instructions to the core
     task send_inst(logic [31:0] inst);
-        static logic [31:0] load = 32'b1110_01x1_1x01_0xxx_0xxx_xxxx_xxxx_xxxx;
+        //static logic [31:0] load = 32'b1110_01x1_1x01_0xxx_0xxx_xxxx_xxxx_xxxx;
+        static logic [31:0] load = 32'b1110_0xx1_xx0x_0xxx_0xxx_xxxx_xxxx_xxxx;
         static integer load_cycles = 3;
-        static logic [31:0]  swap= 32'b1110000100000xxx0xxx000010010xxx;
+       // static logic [31:0] swap= 32'b1110_0001_0x00_0xxx_0xxx_0000_1001_0xxx;
         //Rd = inst[15:12]; // destination register address bits: 4 bits
-        if(xis1(inst,load) || xis1(inst,swap)) 
+        if(xis1(inst,load)) 
         begin 
             load_cyc_cnt = 0;
             $display("load found in interface = %h", inst);
@@ -89,6 +90,7 @@ interface GUVM_interface(input clk);
 
     function void update_command_monitor(GUVM_sequence_item cmd);
         cmd.inst = i_wb_dat; 
+        cmd.updated_flags= dut.u_execute.u_register_bank.r15_out_rm;
         command_monitor_h.write_to_cmd_monitor(cmd);
     endfunction
 
@@ -96,7 +98,7 @@ interface GUVM_interface(input clk);
         if(o_wb_we==1)
             result_monitor_h.write_to_monitor(o_wb_dat, o_wb_adr,o_wb_sel);
         else
-            if (load_cyc_cnt == 5) result_monitor_h.write_to_monitor(0,o_wb_adr,o_wb_sel);
+            if (load_cyc_cnt == 5) result_monitor_h.write_to_monitor(0,o_wb_adr,o_wb_sel,);
             else result_monitor_h.write_to_monitor(0,0,o_wb_sel);
     endtask
 
@@ -104,7 +106,11 @@ interface GUVM_interface(input clk);
         $display("current_pc = %h       %t", dut.u_execute.u_register_bank.o_pc, $time);
         return dut.u_execute.u_register_bank.o_pc;
     endfunction
-
+    
+   /* function logic[31:0] get_flags();
+        $display("updated_flags = %h ",dut.u_execute.u_register_bank.r15_out_rm);
+        return dut.u_execute.u_register_bank.r15_out_rm;
+    endfunction*/
     // initializing the core
     task set_Up();
         i_irq = 1'b0;

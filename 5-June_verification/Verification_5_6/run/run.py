@@ -73,6 +73,8 @@ load --> load --> change flag --> command --> check flag --> store
 load --> load --> store(2)
 7- mul_test (based on RISC-v ISA, Sparcv8 ISA) -->7
 load --> load --> mul(35) --> store(2)
+8- compare_test (based on ARM v2A ISA) -->8
+load --> load --> compare
 any other input wil terminate the simulation
 DUT: """;
 	g = raw_input(s);
@@ -129,13 +131,12 @@ please choose which instruction to simulate:
 21- Load word with misalignment feat., zero extending offset and reg-reg (based on ARM-v2a ISA): enter --> LWMAZERR
 22- Load byte with misalignment feat., zero extending offset and reg-imm (based on ARM-v2a ISA): enter --> LBMAZE
 23- Load byte with misalignment feat., zero extending offset and reg-reg (based on ARM-v2a ISA): enter --> LBMAZERR
-24- Compare zero extending offset and reg-reg (based on ARM-v2a ISA): enter --> C
-25- Swap word. reg-reg (based on SPARC-v8 ISA): enter --> SRwMas
-26- Swap word. reg-imm (based on SPARC-v8 ISA): enter --> SRwM
-27- Swap byte. (based on ARM-v8 ISA): enter --> Sabbram
-28- Atomic load store reg-imm (based on SPARC-v8 ISA): enter --> ALUB
-29- Atomic load store reg-reg (based on SPARC-v8 ISA): enter --> ALUBas
-30- Swap word. reg-imm (based on ARM ISA): enter --> SRwMw
+24- Swap word. reg-reg (based on SPARC-v8 ISA): enter --> SRwMas
+25- Swap word. reg-imm (based on SPARC-v8 ISA): enter --> SRwM
+26- Swap byte. (based on ARM-v8 ISA): enter --> Sabbram
+27- Atomic load store reg-imm (based on SPARC-v8 ISA): enter --> ALUB
+28- Atomic load store reg-reg (based on SPARC-v8 ISA): enter --> ALUBas
+29- Swap word. reg-imm (based on ARM ISA): enter --> SRwMw
 any other input will simulate no operation or make an error in the simulation
 DUT: """;
 		z=raw_input(s)
@@ -186,18 +187,16 @@ DUT: """;
 		elif z == "23":
 			z=("LBMAZERR")
 		elif z == "24":
-			z=("C")	
-		elif z == "25":
 			z=("SRwMas")
-		elif z == "26":
+		elif z == "25":
 			z=("SRwM")
-		elif z == "27":
+		elif z == "26":
 			z=("Sabbram")
-		elif z == "28":
+		elif z == "27":
 			z=("ALUB")	
-		elif z == "29":
+		elif z == "28":
 			z=("ALUBas")	
-		elif z == "30":
+		elif z == "29":
 			z=("SRwMw")	
 		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
 ################################################################################################################
@@ -208,7 +207,7 @@ please choose which instruction to simulate:
 1- load double word (based on sparc-v8 ISA): enter --> LDD
 2- load double word reg-reg (based on sparc-v8 ISA): enter --> LDDRR
 any other input will simulate no operation or make an error in the simulation
-DUT: """
+DUT: """;
 		z=raw_input(s)
 		if z == "1":
 			z=("LDD")
@@ -285,7 +284,7 @@ DUT: """;
 			z=("SBZERR")
 		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
 ################################################################################################################
-	elif g == "7":
+	elif g == "7": 
 		y=("mul_test")
 		s="""
 please choose which instruction to simulate:
@@ -306,6 +305,38 @@ DUT: """;
 			z=("MHUR")
 		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
 ################################################################################################################
+	#elif g == "8":
+               # y=("compare_test")
+               # s="""
+#please choose which instruction to simulate:
+#1- Compare zero extending offset and reg-reg (based on ARM-v2a ISA): enter --> C
+#2- Compare zero extending offset and reg-reg (based on ARM-v2a ISA): enter --> CN
+#any other input will simulate no operation or make an error in the simulation
+#DUT: """;
+              #  z=raw_input(s)
+              #  if z == "1":
+               #         z=("C")
+               # elif z == "2":
+               #         z=("CN")
+               # os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")	
+################################################################################################################	
+	elif g == "8": 
+			y=("compare_test")
+			s="""
+	please choose which instruction to simulate:
+	1- multiply unsigned reg-reg (based on RISC-v ISA and Sparc-V8 ISA): enter --> C
+	2- multiply signed and get the upper half of result reg-reg (based on RISC-v ISA): enter --> CN
+	any other input will simulate no operation or make an error in the simulation
+	DUT: """;
+			z=raw_input(s)
+			if z == "1":
+				z=("C")
+			elif z == "2":
+				z=("CN")
+			os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
+################################################################################################################
+	
+			
 	else:
 		print("please enter a valid number")
 		break

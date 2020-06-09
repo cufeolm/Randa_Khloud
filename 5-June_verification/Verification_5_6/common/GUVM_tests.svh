@@ -8,4 +8,5 @@
 `include"arith_flag_test.sv"
 `include"store_test.sv"
 `include"mul_test.sv"
+`include"compare_test.sv"
 

@@ -13,8 +13,8 @@ package target_package;
         Rs=32'b1110000001100xxx0xxx000000000xxx,
         Swc=32'b1110000011000xxx0xxx000000000xxx, // sub with carry
 
-        C=32'b0010000101010xxx0xxx000000000xxx,
-        CN=32'b1110000101110xxx0xxx000000000xxx,
+        C=32'b1110_0001_0101_0xxx_0xxx_0000_0000_0xxx,
+        CN=32'b1110_0001_0111_0xxx_0xxx_0000_0000_0xxx,
 		//C=32'bxxxx00x1010xxxxxxxxxxxxxxxxxxxxx,
         BIEF=32'b00001010xxxxxxxxxxxxxxxxxxxxxxxx,
         BA = 32'b11101010xxxxxxxxxxxxxxxxxxxxxxxx,
@@ -53,7 +53,7 @@ package target_package;
         RDPSR =  32'b11100101100000001111000000000000,
         
         SRwMw   =32'b1110000100000xxx0xxx000010010xxx, // SWAP register with memory
-		Sabbram=32'b1110000101000xxx0xxx000010010xxx  // Swaps a byte between registers and memory
+		Sabbram= 32'b1110000101000xxx0xxx000010010xxx  // Swaps a byte between registers and memory
     } opcode; 
     // mutual instructions between cores have the same name so we can verify all cores using one scoreboard
     

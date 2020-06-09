@@ -50,7 +50,7 @@ package target_package;
         Store =32'b11xxxxx0001000000010000000000000,
         SW=32'b11xxxxx000100xxxxx1xxxxxxxxxxxxx, // store word reg-imm
         Load = 32'b11xxxxx0000000000010000000000000,
-        LW= 32'b11xxxxx000000xxxxx1xxxxxxxxxxxxx // load word reg-imm
+        LW= 32'b11xxxxx000000xxxxx1xxxxxxxxxxxxx, // load word reg-imm
         
         ALUB=32'b11xxxxx001101xxxxx1xxxxxxxxxxxxx,
         ALUBas=32'b11xxxxx011101xxxxx0xxxxxxxxxxxxx,

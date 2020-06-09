@@ -60,16 +60,16 @@ class A_type_sequence extends GUVM_sequence ;
         //send the sequence
         send(load1);
         
-        //genNop(5,load1.data);
+       // genNop(5,32'Hffffffff);
         genNop(5,load1.data);
         send(load2);
         
         genNop(5,load2.data);
-
+       // genNop(5,0);
         send(command);
         
         genNop(5,command.data);
-        
+          genNop(5,0);
         send(store);
         temp = copy(store);
         send(temp);

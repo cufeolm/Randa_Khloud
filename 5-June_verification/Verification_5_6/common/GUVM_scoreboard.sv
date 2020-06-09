@@ -261,6 +261,10 @@ class GUVM_scoreboard extends uvm_scoreboard;
 				"C":begin
 					verify_compare(cmd_trans,res_trans,hist_trans);
 				end
+				"CN":begin
+					verify_compare_not(cmd_trans,res_trans,hist_trans);
+				end
+				
 				"SRwMas":begin
 					verify_swap_ans(cmd_trans,res_trans,hist_trans);
 				end

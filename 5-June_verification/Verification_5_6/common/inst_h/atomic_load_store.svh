@@ -41,11 +41,11 @@ if (cmd_trans.SOM == SB_HISTORY_MODE)
 		
 					if(((exp_result) == (actual_result)) && (exp_mem_add==actual_mem_add))
 						begin
-							`uvm_info ("ATOMIC_LOAD_STORE_PASS", $sformatf("DUT Calculation=%b SCOREBOARD Calculation=%b DUT memory address Calculation=%0d SCOREBOARD memory address Calculation=%0d ", actual_result, exp_result,actual_mem_add,exp_mem_add), UVM_LOW)
+							`uvm_info ("ATOMIC_LOAD_STORE_PASS", $sformatf("DUT Calculation=%h SCOREBOARD Calculation=%h DUT memory address Calculation=%0h SCOREBOARD memory address Calculation=%0h ", actual_result, exp_result,actual_mem_add,exp_mem_add), UVM_LOW)
 						end
 					else
 						begin
-							`uvm_error("ATOMIC_LOAD_STORE_FAIL", $sformatf("DUT Calculation=%0b SCOREBOARD Calculation=%0b DUT memory address Calculation=%0d SCOREBOARD memory address Calculation=%0d ",actual_result,exp_result,actual_mem_add,exp_mem_add))
+							`uvm_error("ATOMIC_LOAD_STORE_FAIL", $sformatf("DUT Calculation=%0h SCOREBOARD Calculation=%0h DUT memory address Calculation=%0h SCOREBOARD memory address Calculation=%0h ",actual_result,exp_result,actual_mem_add,exp_mem_add))
 						end
 	end					
 endfunction

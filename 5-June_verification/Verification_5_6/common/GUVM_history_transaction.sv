@@ -54,6 +54,8 @@ class GUVM_history_transaction extends uvm_transaction;
             s={s ,m} ;
             $sformat(m," data_write_e:%b",item_history[i].res_trans.data_write_e);
             s={s ,m} ;
+            //$sformat(m," updated_flags:%b",item_history[i].res_trans.updated_flags[31:28]);
+           // s={s ,m} ;
             //s = {s ,m };"result:%h",item_history[i].res_trans.result
             //$display("seq#",i," pc %d",item_history[i].seq_item.current_pc," inst %h ",item_history[i].seq_item.inst,"result:%h",item_history[i].res_trans.result);
 

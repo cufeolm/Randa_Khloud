@@ -56,6 +56,7 @@
 `include "lbmaze.svh"
 `include "lbmazerr.svh"
 `include "compare.svh"
+`include "compare_not.svh"
 `include "swap_ans.svh"
 `include "swap.svh"
 `include "swap_word.svh"

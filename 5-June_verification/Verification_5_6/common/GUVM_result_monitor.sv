@@ -28,6 +28,7 @@ class GUVM_result_monitor extends uvm_component;
       result_t.result = r;
       result_t.mem_add = mem_add;
       result_t.data_write_e = data_write_e;
+      //result_t.updated_flags=bfm.get_flags;
       Mon2Sb_port.write(result_t);
    endfunction : write_to_monitor
    
