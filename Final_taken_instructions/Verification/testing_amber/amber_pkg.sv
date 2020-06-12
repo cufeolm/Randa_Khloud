@@ -13,7 +13,7 @@ package target_package;
         Rs=32'b1110000001100xxx0xxx000000000xxx,
         Swc=32'b1110000011000xxx0xxx000000000xxx, // sub with carry
 
-       C=32'b1110_0001_0101_0xxx_0xxx_0000_0000_0xxx, //Compare and update flags
+        C=32'b1110_0001_0101_0xxx_0xxx_0000_0000_0xxx, //Compare and update flags
        // C=32'b1110001101010xxx0xxx0000xxxxxxxx,
         CN=32'b1110_0001_0111_0xxx_0xxx_0000_0000_0xxx, //Compare NOT and update flags
 		//C=32'bxxxx00x1010xxxxxxxxxxxxxxxxxxxxx,
